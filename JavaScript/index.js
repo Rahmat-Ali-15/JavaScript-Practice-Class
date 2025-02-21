@@ -170,8 +170,6 @@ else{
     console.log("Scalene")
 }*/
 
-
-
 /*Write a program that checks if a given number is divisible by both 3 and 5.
 
 let num = 735;
@@ -188,23 +186,34 @@ else{
 */
 
 
-
-
-
 /*Create a program that takes the current time (in 24-hour format) and prints "Good morning", "Good afternoon", or "Good evening" based on the time.*/
 
-// let time = "12:00 am";
 
-// if (time >= "1:00 am" && time <= "11:59 am"){
+// let now = new Date();
+// let hours = now.getHours();
+// let minutes = now.getMinutes();
+
+// console.log(typeof hours, typeof minutes)
+
+
+
+
+// let time = Number("12:00");
+
+// time = +time
+
+// console.log(typeof time, time, "this is Time");
+
+// if (time >= Number("00:00") && time <= Number("11:59")) {
 //     console.log("Good Morning")
 // }
-// else if (time >= "12:00 pm" && time <= "03:59 pm"){
+// else if (time >= Number("12:00") && time <= Number("15:59")) {
 //     console.log("Good Afternoon")
 // }
-// else if (time >= "04:00 pm" && time <= "08:59 pm"){
+// else if (time >= Number("16:00") && time <= Number("20:59")) {
 //     console.log("Good Evening")
 // }
-// else{
+// else {
 //     console.log("Jyada shana mat ban morning , afternoon or evening me se kisi ka time dal")
 // }
 
@@ -231,14 +240,14 @@ else{
 
 // Create a program that checks whether a character is a vowel or consonant (assume lowercase input).
 
-let character = "5";
+// let character = "5";
 
-if (character === "a" || character === "e" || character === "i" || character === "o" || character === "u"){
-    console.log("Vowel letter")
-}
-else if(character >= "a" && character <= "z"){
-    console.log("Consonant letter")
-}
-else{
-    console.log("Invalid: Please enter alphabet")
-}
+// if (character === "a" || character === "e" || character === "i" || character === "o" || character === "u") {
+//     console.log("Vowel letter")
+// }
+// else if (character >= "a" && character <= "z") {
+//     console.log("Consonant letter")
+// }
+// else {
+//     console.log("Invalid: Please enter alphabet")
+// }
