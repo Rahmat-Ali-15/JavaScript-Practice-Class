@@ -138,49 +138,68 @@
 
 // 12. Write a program that simulates an ATM. The user enters a PIN and the loop continues until they enter the correct PIN (assuming 3 attempts maximum).
 
-// let correctPin = 9262;
-// let userPin = Number(prompt("Enter your four digit ATM pin"));
+let correctPin = 9262;
+let userPin = Number(prompt("Enter your four digit ATM pin"));
 
-// do {
-//     if (userPin === correctPin) {
-//         console.log("Paise hi Paise!");
-//         break
-//     }
-//     userPin = Number(prompt("Wrong Pin! Try again:"))
-// }
-// while (userPin !== correctPin)
+do {
+    if (userPin === correctPin) {
+        console.log("Paise hi Paise!");
+        break
+    }
+    userPin = Number(prompt("Wrong Pin! Try again:"))
+}
+while (userPin !== correctPin)
 
 
 // 13. Implement a number guessing game where the program randomly selects a numger between 1 and 100, and the user keeps guessing until they get it right. The program should display hints("Too high" or "Too low").
 
 
-let num = 77;
-let userNumber = Number(prompt("Guess the number between 1 to 100"));
+// let num = 77;
+// let userNumber = Number(prompt("Guess the number between 1 to 100"));
 
-do {
-    if (userNumber > 100 || userNumber <= 0) {
-        console.log("Invalid number! Please enter a number between 1 to 100");
-    }
-    else if (userNumber === num) {
-        console.log("Genius hai re Baba!");
-        break
-    }
-    else if (userNumber > 90) {
-        console.log("Too high");
-    }
-    else if (userNumber < 30) {
-        console.log("Too low");
-    }
-    if (userNumber !== num) {
-        userNumber = Number(prompt("Wrong guess! try again:"))
-    }
-}
-while (true)
+// do {
+//     if (userNumber > 100 || userNumber <= 0) {
+//         console.log("Invalid number! Please enter a number between 1 to 100");
+//     }
+//     else if (userNumber === num) {
+//         console.log("Genius hai re Baba!");
+//         break
+//     }
+//     else if (userNumber > 90) {
+//         console.log("Too high");
+//     }
+//     else if (userNumber < 30) {
+//         console.log("Too low");
+//     }
+//     if (userNumber !== num) {
+//         userNumber = Number(prompt("Wrong guess! try again:"))
+//     }
+// }
+// while (true)
 
 
 // 14. Write a program that checks if a number is palindrome using a do-while loop.
 
+// let num = 121;
+// let reverseNum = num.toString().split("").map(Number);
+// // console.log(reverseNum)
+// // console.log(reverseNum.length);
 
+// let i = reverseNum.length - 1;
+// let result = "";
+
+// do {
+//     result += reverseNum[i];
+//     i--
+// }
+// while (i >= 0)
+// // console.log(Number(result));
+// if (Number(result) === num) {
+//     console.log("It is a palindrome");
+// }
+// else {
+//     console.log("not a palindrome");
+// }
 
 // 15. Create a simple calculator that repeatedly asks the user for two numbers and an operation (+,-,*,/) until they choose to exit. 
 
