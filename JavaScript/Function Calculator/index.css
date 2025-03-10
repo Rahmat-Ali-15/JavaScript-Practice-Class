@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    margin-top: 100px;
+    margin-right: 220px;
+    margin-bottom: 10px;
+    color: rgb(228, 192, 14);
+}
+.result{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    
+}
+.result>p{
+    color: rgb(237, 18, 168);
+}
+.result>span{
+    color: rgb(2, 239, 224);
+}
