@@ -46,7 +46,19 @@
 
 // 4. Create a function that takes an array of numbers and returns the largest number in the array.
 
+let arr = [25, 15, 0, 2, 85, 10, 3]
+let largest = arr[0];
+function largestNum() {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest
+}
 
+let output = largestNum();
+console.log(output);
 
 // 5. Write a function that takes a string and returns the string in uppercase.
 
