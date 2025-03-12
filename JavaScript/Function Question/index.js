@@ -46,22 +46,31 @@
 
 // 4. Create a function that takes an array of numbers and returns the largest number in the array.
 
-let arr = [25, 15, 0, 2, 85, 10, 3]
-let largest = arr[0];
-function largestNum() {
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > largest) {
-            largest = arr[i];
-        }
-    }
-    return largest
-}
+// let arr = [25, 15, 0, 2, 85, 10, 3]
+// let largest = arr[0];
 
-let output = largestNum();
-console.log(output);
+// function largestNum() {
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] > largest) {
+//             largest = arr[i];
+//         }
+//     }
+//     return largest
+// }
+
+// let output = largestNum();
+// console.log(output);
 
 // 5. Write a function that takes a string and returns the string in uppercase.
 
+// let str = "Rahmat"
+
+// function upperSrt() {
+//     return str.toUpperCase();
+// }
+
+// let output = upperSrt()
+// console.log(output);
 
 
 
@@ -72,8 +81,9 @@ console.log(output);
 // 6. Write a function that takes an array of strings and returns a new array with the lengths of those strings.
 
 
-// 7. Create a function that takes a number and returns its factorial (e.g., `5! = 5 * 4 * 3 * 2 * 1`).
 
+
+// 7. Create a function that takes a number and returns its factorial (e.g., `5! = 5 * 4 * 3 * 2 * 1`).
 
 
 // 8. Write a function that takes a string and returns `true` if it’s a palindrome, otherwise `false`.
