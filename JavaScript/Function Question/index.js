@@ -85,6 +85,18 @@
 
 // 7. Create a function that takes a number and returns its factorial (e.g., `5! = 5 * 4 * 3 * 2 * 1`).
 
+// let num = 3;
+// let count = 1;
+
+// function factorial() {
+//     for (let i = 1; i <= num; i++) {
+//         count *= i;
+//     }
+//     return count;
+// }
+
+// let output = factorial()
+// console.log(`${num}! = ${output}`);
 
 // 8. Write a function that takes a string and returns `true` if it’s a palindrome, otherwise `false`.
 
@@ -161,6 +173,9 @@
 
 
 // 24. Create a recursive function to check if a string is a palindrome.
+
+
+
 // 25. Write a recursive function to calculate the power of a number (e.g., `power(2, 3) = 8`).
 
 
