@@ -100,6 +100,32 @@
 
 // 8. Write a function that takes a string and returns `true` if it’s a palindrome, otherwise `false`.
 
+// let str = "121";
+// let reverseStr = str.split("")
+// let revStrStore = "";
+
+// function palindrome() {
+//     for (let i = reverseStr.length - 1; i >= 0; i--) {
+//         revStrStore += reverseStr[i];
+//     }
+//     if (revStrStore === str) {
+//         return "True"
+//     }
+//     else {
+//         return "False"
+//     }
+// }
+// let output = palindrome();
+// console.log (output);
+
+
+// or Second method
+
+// function palindrome(str) {
+//     return str === str.split("").reverse().join("");
+// }
+
+// console.log(palindrome("121"));
 
 
 
