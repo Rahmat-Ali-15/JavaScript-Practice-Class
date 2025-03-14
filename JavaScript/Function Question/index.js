@@ -131,14 +131,36 @@
 
 // 9. Create a function that takes two arrays and returns a new array with elements that are present in both arrays.
 
+// let arr1=[1,2,3];
+// let arr2=[4,5,6];
+
+// function newArr(){
+//     return arr1.concat(arr2);
+// }
+// let output=newArr()
+// console.log(output);
 
 
 // 10. Write a function that takes a number and returns `true` if it’s a prime number, otherwise `false`.
 
 
+function isPrime(num) {
+    if (num < 2) {
+        return false;
+    }
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let output = isPrime(100);
+console.log(output);
+
 
 // ### **Advanced Function Problems**
-
 
 
 // 11. Write a function that takes a string and returns the number of vowels in it.
