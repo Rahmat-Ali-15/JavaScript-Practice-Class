@@ -107,3 +107,118 @@
 // console.log(calculator.multiply());
 // console.log(calculator.devide());
 
+
+
+// Practice questions
+
+
+// 2.Given an object {name:"Alice", age:25, city:"New York"}, update the age property to 26 and add a new property country:"USA".
+
+// let object = {
+//     name: "Alice",
+//     age: 25,
+//     city: "New York",
+// }
+// // updating age
+// object.age = 26;
+// // adding new property
+// object.country = "USA"
+
+// console.log(object)
+
+
+// 3. Create an object with at least 3 properties and use a loop ot print each key-value pair.
+
+// let object = {
+//     name: "Asfar",
+//     age: 20,
+//     city: "Muzaffarpur",
+// }
+
+// for (let key in object) {
+//     console.log(`${key} = ${object[key]}`);
+// }
+
+
+
+// 4. Create an object represeting a student with properties like  name, age, and grade, where grades itself is an object with subjects as keys and scores as values.
+
+// let student = {
+//     name: "Kharare",
+//     age: 20,
+//     grade: {
+//         Mathematics: 100,
+//         Science: 92,
+//         English: 84,
+//     }
+// }
+
+// for (let key in student) {
+//     if(typeof student[key]=== "string" || typeof student[key]==="number"){
+//         console.log(`${key} = ${student[key]}`);
+//     }
+//     if(typeof student[key]=== "object"){
+//         for (let subject in student[key]) {
+//             console.log(`${subject} = ${student[key][subject]}`);
+//         }
+//     }
+// }
+
+
+
+
+// 5. Create an object with a greet method that prints a greeting mesage using the object's properties.
+
+// let object = {
+//     greet: function (message) {
+//         return message
+//     }
+// }
+// let ans = object.greet("good")
+// console.log(ans);
+
+
+
+// 6. Given an object { name : "Rahmat", age: "20", job : "Developer"}, use destructuring to extract and print name and job.
+
+// let object = {
+//     name: "Rahmat",
+//     age: "20",
+//     job: "Developer",
+// }
+
+// let { name, job } = object;
+// console.log(name, job);
+
+
+// 7. Write a function that checks if a given property exists in an object and return true or false.
+
+// let object = {
+//     name : "silent",
+//     age : 20,
+//     marks : 481,
+// };
+// function hasproperty(obj,property){
+//     return property in obj;
+// }
+// console.log(hasproperty(object,"marks"));
+
+
+// Merge two objects {a:1,b:2} and {c:3,d:4} into a new object.
+
+// let obj1 = {
+//     a: 1,
+//     b: 2,
+// }
+// let obj2 = {
+//     c: 3,
+//     d: 4,
+// }
+
+// let MergeObj = { ...obj1, ...obj2 };
+// console.log(MergeObj);
+
+
+// Demonstrate how to create a shallow  copy and a deep copy of an object. 
+
+
