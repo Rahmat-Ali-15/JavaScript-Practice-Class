@@ -78,4 +78,128 @@
 
 // 9. How do you find the index of a specify element in an array?
 
+// let arr = [10, 15, 20,19, 70];
 
+// console.log(arr.indexOf(70));
+
+
+// 10. How do you sort  an array of numbers in ascending order?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1. Create an array of five colors and print its length.
+
+// let color = ["red", "blue", "white","yellow","gray"];
+
+// console.log(color.length);
+
+
+// 2. How do you access the third element of an array.
+
+// let color = ["red", "blue", "white","yellow","gray"];
+
+// console.log(color[2]);
+
+// second method
+
+// let color = ["red", "blue", "white", "yellow", "gray"];
+
+// function find(element) {
+//     for (let i = 0; i < color.length; i++) {
+//         if (element - 1 === i) {
+//             return color[i];
+//         }
+//     }
+// }
+// let ans = find(3);
+// console.log(ans);
+
+
+// 3. Add a new element to the end of an array.
+
+// let color = ["red", "blue", "white","yellow","gray"];
+
+// color.push("cyne");
+// console.log(color);
+
+
+
+// 4. Remove the first element from an array.
+
+// let color = ["red", "blue", "white","yellow","gray"];
+
+// color.shift(1);
+// console.log(color);
+
+
+// 5. Find the index of a specific element in an array.
+
+// let color = ["red", "blue", "white","yellow","gray"];
+
+// console.log(color.indexOf("blue"));
+
+
+// 6. Reverse an array without using the reverse() method.
+
+// let color = ["red", "blue", "white", "yellow", "gray"];
+// let reverseColor = [];
+// for (let i = color.length-1; i > 0; i++) {
+//     reverseColor += color
+// }
+// console.log(reverseColor);
