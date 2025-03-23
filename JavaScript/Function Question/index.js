@@ -200,6 +200,9 @@ console.log(output);
 
 
 // 19. Create a function that takes a number and a callback, and calls the callback with the square of the number.
+
+
+
 // 20. Write a function that takes a string and a callback, and returns the result of the callback applied to the string reversed.
 
 
