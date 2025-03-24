@@ -138,17 +138,17 @@
 
 // 12. Write a program that simulates an ATM. The user enters a PIN and the loop continues until they enter the correct PIN (assuming 3 attempts maximum).
 
-let correctPin = 9262;
-let userPin = Number(prompt("Enter your four digit ATM pin"));
+// let correctPin = 9262;
+// let userPin = Number(prompt("Enter your four digit ATM pin"));
 
-do {
-    if (userPin === correctPin) {
-        console.log("Paise hi Paise!");
-        break
-    }
-    userPin = Number(prompt("Wrong Pin! Try again:"))
-}
-while (userPin !== correctPin)
+// do {
+//     if (userPin === correctPin) {
+//         console.log("Paise hi Paise!");
+//         break
+//     }
+//     userPin = Number(prompt("Wrong Pin! Try again:"))
+// }
+// while (userPin !== correctPin)
 
 
 // 13. Implement a number guessing game where the program randomly selects a numger between 1 and 100, and the user keeps guessing until they get it right. The program should display hints("Too high" or "Too low").
@@ -202,6 +202,40 @@ while (userPin !== correctPin)
 // }
 
 // 15. Create a simple calculator that repeatedly asks the user for two numbers and an operation (+,-,*,/) until they choose to exit. 
+
+
+let firstNumer=prompt("Enter your first number");
+let secondNumber=prompt("Enter your second number");
+let operator=prompt("Please enter operator")
+
+firstNumer=+firstNumer;
+secondNumber=+secondNumber;
+
+let result="";
+
+while(true){
+    if (firstNumer.toLowerCase() === "exit") {
+        console.log("Calculator closed.");
+        break;
+    }
+
+    if(operator==="+"){
+        result=firstNumer+secondNumber
+    }
+    else if(operator==="-"){
+        result=firstNumer-secondNumber
+    }
+    else if(operator==="*"){
+        result=firstNumer*secondNumber
+    }
+    else if(operator==="/"){
+        result=firstNumer/secondNumber
+    }
+    else{
+        console.log("Please enter a valid operator");
+    }
+}
+
 
 
 
