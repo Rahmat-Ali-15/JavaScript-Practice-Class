@@ -1,4 +1,4 @@
-// ==> To finding square root of a given number.
+// Math.sqrt()==> To finding square root of a given number.
 
 // by using method
 let num = 49;
@@ -11,31 +11,31 @@ let ans = num1 ** (1 / 2);
 console.log(ans);
 
 
-// ==> Finding absolute value of a given number
+// Math.abs()==> Finding absolute value of a given number
 
 let num2 = -8;
 console.log(Math.abs(num2)); // it always return a positive number
 
 
-// Ceil ==> Ceil method is used to rounds up and return the greater than or equal to of a given number.For example if a number is 4.004 and we use ceil method then it returns 5 because ceil rounds up.
+// Math.ceil() ==> Ceil method is used to rounds up and return the greater than or equal to of a given number.For example if a number is 4.004 and we use ceil method then it returns 5 because ceil rounds up.
 
 let num3 = 4.004;
 
 console.log(Math.ceil(num3));
 
-// floor ==> floor method is used to rounds down and return smaller than or equal to of a given number. For example if a number is 5.89 and we use floor method then it returns 5 because floor rounds down.
+// Math.floor() ==> floor method is used to rounds down and return smaller than or equal to of a given number. For example if a number is 5.89 and we use floor method then it returns 5 because floor rounds down.
 
 let num4 = 5.89;
 console.log(Math.floor(num4));
 
 
-// round ==> If a number have decimal greater than or equal to 0.5 then it returns next integer and if a number have decimal less than 0.5 then it returns the same integer.
+// Math.round() ==> If a number have decimal greater than or equal to 0.5 then it returns next integer and if a number have decimal less than 0.5 then it returns the same integer.
 
 let num5 = 8.4;
 console.log(Math.round(num5));
 
 
-// exp ==> exp method return e raised to the power of a number. that is Math.exp(x) = e**x
+// Math.exp() ==> exp method return e raised to the power of a number. that is Math.exp(x) = e**x
 
 let num6= 2;
 console.log(Math.exp(num6));
