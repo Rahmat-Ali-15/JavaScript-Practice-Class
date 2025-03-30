@@ -89,7 +89,7 @@
 
 // numbers.sort((a, b) => a - b);
 
-// console.log(numbers);
+console.log(numbers);
 
 
 
