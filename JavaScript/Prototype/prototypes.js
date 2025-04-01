@@ -32,4 +32,11 @@ console.log(arr2);
 
 
 
+let arr3 = [5, 7, 8, 9];
+Array.prototype.शिफ्ट = function () {
+    this.splice(0, 1);
+}
+arr3.शिफ्ट();
+// console.log(arr3);
+
 
