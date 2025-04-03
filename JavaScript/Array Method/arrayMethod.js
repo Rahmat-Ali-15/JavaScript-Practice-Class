@@ -85,3 +85,10 @@ let arr11 = [2, 1, 9, 17, 6, 5, 3, 0];
 console.log(arr10.findLastIndex(num => num > 5));
 
 
+// Array.conct() ==> It is used to merge two or more than two array. This method does not change the existing array, it returns a new array.
+
+let arr12 = [1,2,3,4];
+let arr13 = [5,6,7,8];
+
+let newArray = arr12.concat(arr13);
+console.log(newArray);
