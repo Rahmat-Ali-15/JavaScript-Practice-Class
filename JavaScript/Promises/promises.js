@@ -37,12 +37,12 @@
 
 // ice_cream.then((res) => { console.log("got ice cream in hand"); }).catch((err) => { console.log("ice cream is not available"); })
 
-// // Promise(true)
+// Promise(true)
 
-// // .then and .catch only handle the error -> try catch
+// .then and .catch only handle the error -> try catch
 
-// // this is handling promis status
-// // console.log(ice_cream);
+// this is handling promis status
+// console.log(ice_cream);
 
 
 
@@ -72,7 +72,7 @@
 
 // post.then((res) => { console.log("got post details"); }).catch((err) => { console.log("post details not available"); })
 
-// // let api1 = "https://jsonplaceholder.typicode.com/posts"
+// let api1 = "https://jsonplaceholder.typicode.com/posts"
 
 // fetch(api1).then((res) => res.json()).then((res) => { console.log(res); }).catch((err) => { console.log(err); })
 
@@ -80,16 +80,19 @@
 
 // Web version
 
-function appends(value) {
-    let scriptse = document.createElement("script"); // creating the elements as a scripts...
+// function appends(value) {
+//     let scriptse = document.createElement("script"); // creating the elements as a scripts...
 
-    scriptse.src = value;  // Adding attribute in script...
+//     scriptse.src = value;  // Adding attribute in script...
 
-    document.head.appends(scriptse);
+//     document.head.append(scriptse);
 
-    setTimeout(() => {
-        scripts();
-    }, 3000);
-}
+//     setTimeout(() => {
+//         scripts();
+//     }, 3000);
+// }
 
-appends("./script.js")
+// appends("./script.js")
+
+
+
