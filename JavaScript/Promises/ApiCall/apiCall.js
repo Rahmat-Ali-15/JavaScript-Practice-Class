@@ -1,4 +1,4 @@
-// async function apiCall() {
+//  async function apiCall() {
 //     let div = document.getElementById("main")
 //     let api = "https://jsonplaceholder.typicode.com/todos";
 //     /* fetch(api)
@@ -32,7 +32,7 @@
 
 
 
-async function api2() {
+/* async function api2() {
     let div=document.getElementById("main")
     let api2="https://jsonplaceholder.typicode.com/posts";
     let data2;
@@ -52,5 +52,11 @@ async function api2() {
         div.append(ids,title)
     })
 }
-api2()
+api2()   */
 
+
+
+// fetching API
+
+let url = "https://jsonplaceholder.typicode.com/todos"
+fetch(url).then(res => res.json()).then((data) => { console.log(data) }).catch((err) => { console.log(err) });
