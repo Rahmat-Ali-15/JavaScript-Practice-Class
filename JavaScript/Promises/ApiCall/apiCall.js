@@ -58,5 +58,20 @@ api2()   */
 
 // fetching API
 
-let url = "https://jsonplaceholder.typicode.com/todos"
-fetch(url).then(res => res.json()).then((data) => { console.log(data) }).catch((err) => { console.log(err) });
+// let url = "https://jsonplaceholder.typicode.com/users"
+// fetch(url).then(res => res.json()).then((data) => { console.log(data) }).catch((err) => { console.log(err) });
+
+// fetching api with Try and catch
+
+async function getPhotos() {
+    let url = "https://jsonplaceholder.typicode.com/users"
+    let photos;
+    try {
+        let response = await fetch(url);
+        photos = await response.json();
+        console.log(photos);
+    } catch (error) {
+     console.log(error);   
+    }
+}
+getPhotos()
