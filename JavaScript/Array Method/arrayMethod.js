@@ -60,7 +60,7 @@ console.log(arr7.indexOf("potato", 2));
 console.log(arr7.indexOf("mango"));
 
 
-// Array.find() ==> It is used to find the first elements of an array that meets a specific condition. If it find a match, it returns that element. Otherwise, returns undefined. It is used when we need only first match. When we need to match all elemtns then we use filte method.
+// Array.find() ==> It is used to find the first elements of an array that meets a specific condition. If it find a match, it returns that element. Otherwise, returns undefined. It is used when we need only first match. When we need to match all elemtns then we use filter method.
 
 let arr8 = [2, 1, 9, 7, 6, 5, 3, 70];
 let found = arr8.find(num => num > 3);
