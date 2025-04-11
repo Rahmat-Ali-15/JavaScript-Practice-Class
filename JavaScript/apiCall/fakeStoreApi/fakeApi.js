@@ -29,16 +29,18 @@ function append2(value) {
         let image = document.createElement("img");
         let rating = document.createElement("p");
 
-        id.innerText = el.id;
-        title.innerText = el.title;
-        price.innerText = el.price;
-        description.innerText = el.description;
-        category.innerText = el.category;
+        id.innerText = `Id:- ${el.id}`;
+        title.innerText = `Title:- ${el.title}`;
+        title.className = "title"
+        price.innerText = `Price:- ${el.price}`;
+        description.innerText = `Discription:- ${el.description}`;
+        description.className = "description"
+        category.innerText = `Category:- ${el.category}`;
         image.src = el.image;
-        rating.rate = el.rating.rate;
-        rating.count = el.rating.count;
+        rating.innerText = `Rating Rate: ${el.rating.rate} | Rating Count: ${el.rating.count}`;
 
-        div2.append(id, title, price, description, category, image, rating);
+
+        div2.append(image, id, title, price, description, category, rating);
         main2.append(div2)
 
     })
