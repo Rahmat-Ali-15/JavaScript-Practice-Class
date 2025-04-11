@@ -204,39 +204,6 @@
 // 15. Create a simple calculator that repeatedly asks the user for two numbers and an operation (+,-,*,/) until they choose to exit. 
 
 
-let firstNumer=prompt("Enter your first number");
-let secondNumber=prompt("Enter your second number");
-let operator=prompt("Please enter operator")
-
-firstNumer=+firstNumer;
-secondNumber=+secondNumber;
-
-let result="";
-
-while(true){
-    if (firstNumer.toLowerCase() === "exit") {
-        console.log("Calculator closed.");
-        break;
-    }
-
-    if(operator==="+"){
-        result=firstNumer+secondNumber
-    }
-    else if(operator==="-"){
-        result=firstNumer-secondNumber
-    }
-    else if(operator==="*"){
-        result=firstNumer*secondNumber
-    }
-    else if(operator==="/"){
-        result=firstNumer/secondNumber
-    }
-    else{
-        console.log("Please enter a valid operator");
-    }
-}
-
-
 
 
 

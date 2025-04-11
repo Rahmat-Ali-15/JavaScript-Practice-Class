@@ -219,6 +219,6 @@
 // console.log(MergeObj);
 
 
-// Demonstrate how to create a shallow  copy and a deep copy of an object. 
+// 8.Demonstrate how to create a shallow  copy and a deep copy of an object. 
 
 

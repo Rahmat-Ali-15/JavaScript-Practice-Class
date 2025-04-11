@@ -34,7 +34,7 @@
 
 // console.log(typeof String(strings));
 
-/* Grade Calculator Problem 
+/* Grade Calculator Problem
 let grade="30%";
 let number= +grade;
 if (number>= Number("90%")){
@@ -93,7 +93,7 @@ if (num1 > num2) {
 }
 else if (num1 < num2) {
     console.log("Smaller Number");
-    
+
 }
 else if(num1=num2){
     console.log("Equal");

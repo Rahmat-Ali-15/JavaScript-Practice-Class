@@ -29,7 +29,6 @@ operator = operator;
 
 // calculate()
 
-
 function calculate(n1, n2, key) {
     switch (key) {
         case "+":

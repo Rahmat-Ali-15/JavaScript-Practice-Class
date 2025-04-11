@@ -1,4 +1,4 @@
-// Find rhe largest andd smallest number in an array using a for loop.
+// Find rhe largest and smallest number in an array using a for loop.
 
 let arr = [10, 20, 30, 100];
 let largeCount = 0;
