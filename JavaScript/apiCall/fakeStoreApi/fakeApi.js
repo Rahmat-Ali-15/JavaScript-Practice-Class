@@ -37,7 +37,7 @@ function append2(value) {
         description.className = "description"
         category.innerText = `Category:- ${el.category}`;
         image.src = el.image;
-        rating.innerText = `Rating Rate: ${el.rating.rate} | Rating Count: ${el.rating.count}`;
+        rating.innerText = `Rating Rate: ${el.rating.rate}\nRating Count: ${el.rating.count}`;
 
 
         div2.append(image, id, title, price, description, category, rating);
