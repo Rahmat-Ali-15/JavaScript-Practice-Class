@@ -47,5 +47,5 @@ img {
     overflow: hidden;
 }
 #second_container :nth-child(n){
-    mix-blend-mode: multiply;
+    mix-blend-mode: multiply; /* mix-blend-mode property is used to remove background color of an image */
 }
