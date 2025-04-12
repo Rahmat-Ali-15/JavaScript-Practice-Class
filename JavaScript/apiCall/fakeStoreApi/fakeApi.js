@@ -1,12 +1,15 @@
 let api2 = "https://fakestoreapi.com/products";
 
+
+// fetching api & sorting in ascending order
+
 async function apiCall2() {
     try {
         let res1 = await fetch(api2);
         let res1Val = await res1.json();
 
         // sorting rating
-        res1Val.sort((a, b) => a.rating.rate - b.rating.rate)
+        res1Val.sort((a, b) => a.price - b.price)
 
         console.log(res1Val);
         append2(res1Val)
@@ -15,11 +18,35 @@ async function apiCall2() {
     }
 }
 
-function append2(value) {
+// fetching api & sorting in descending order
 
+async function apiCall3() {
+    try {
+        let res5 = await fetch(api2);
+        let res5Val = await res5.json();
+
+        // sorting rating
+        res5Val.sort((a, b) => b.price - a.price)
+
+        console.log(res5Val);
+        append2(res5Val)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Clear all data 
+
+function clearData() {
+    let main = document.getElementById("container");
+    main.innerHTML = "";
+}
+
+function append2(value) {
+    let main = document.getElementById("container");
+    main.innerHTML = "";
 
     value.forEach((el) => {
-        let main2 = document.getElementById("second_container");
         let div2 = document.createElement("div");
         let id = document.createElement("p");
         let title = document.createElement("p");
@@ -41,7 +68,7 @@ function append2(value) {
 
 
         div2.append(image, id, title, price, description, category, rating);
-        main2.append(div2)
+        main.append(div2)
 
     })
 
