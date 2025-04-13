@@ -12,9 +12,9 @@ async function userApi() {
 }
 userApi()
 
-function append(value){
+function append(value) {
 
-    value.forEach((el)=>{
+    value.forEach((el) => {
         let main = document.getElementById("container");
         let div = document.createElement("div");
 
@@ -31,14 +31,14 @@ function append(value){
         name.innerText = `Name:- ${el.name}`;
         userName.innerText = `UserName:- ${el.username}`;
         email.innerText = `Email:- ${el.email}`;
-        address.innerText = `\street:- ${el.address.street}\nsuite:- ${el.address.suite}\ncity:- ${el.address.city}\nzipcode:- ${el.address.zipcode}\nLat:- ${el.address.geo.lat}\nLng:- ${el.address.geo.lng}`;
+        address.innerText = `street:- ${el.address.street}\n suite:- ${el.address.suite}\n city:- ${el.address.city}\n zipcode:- ${el.address.zipcode}\n Lat:- ${el.address.geo.lat}\n Lng:- ${el.address.geo.lng}`;
         pNum.innerText = `Phone:- ${el.phone}`;
         website.innerText = `Website:- ${el.website}`;
-        company.innerText = `Name:- ${el.company.name}\nCatchphrase:- ${el.company.catchPhrase}\nBs:- ${el.company.bs}`;
+        company.innerText = `Name:- ${el.company.name}\n Catchphrase:- ${el.company.catchPhrase}\n Bs:- ${el.company.bs}`;
 
-        div.append(id,name,userName,email,address,pNum,website,company);
+        div.append(id, name, userName, email, address, pNum, website, company);
         main.append(div)
 
     })
-    
+
 }

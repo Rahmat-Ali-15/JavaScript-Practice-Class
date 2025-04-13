@@ -13,10 +13,11 @@
 }
 #container>div{
     width: 380px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: cyan;
+    border: none;
+    border-radius: 8px;
 }
