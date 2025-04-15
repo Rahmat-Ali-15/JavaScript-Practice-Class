@@ -22,19 +22,23 @@ function foundMovie(value) {
 
     value.forEach((el) => {
         let div = document.createElement("div");
-        let Title = document.createElement("p");
+        div.className = "parent_container"
+        let div2 = document.createElement("div");
+        div2.className = "p_h3_container"
+        let Title = document.createElement("h3");
         let Year = document.createElement("p");
         let imdbID = document.createElement("p");
         let Type = document.createElement("p");
         let Poster = document.createElement("img");
 
-        Title.innerText = `Tirle: ${el.Title}`;
-        Year.innerText = `Title: ${el.Year}`
+        Title.innerText = `Title: ${el.Title}`;
+        Year.innerText = `Year: ${el.Year}`
         imdbID.innerText = `imdbID: ${el.imdbID}`;
         Type.innerText = `Type: ${el.Type}`;
         Poster.src = `${el.Poster}`;
 
-        div.append(Title, Year, imdbID, Type, Poster);
+        div2.append(Title, Year, imdbID, Type)
+        div.append(div2, Poster);
         main.append(div)
 
     })
