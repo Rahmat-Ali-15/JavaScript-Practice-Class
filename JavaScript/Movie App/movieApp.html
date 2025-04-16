@@ -11,10 +11,20 @@
 <body>
     <h1>IMDB Movie APP</h1>
     <div class="search_bar_container">
-        <input type="search" id="search" placeholder="Search IMDB Movie">
+
+        <input type="search" id="search" placeholder="Enter IMDB movie name...">
+
+        <select name="type" id="select_type">
+            <option value="">All Type</option>
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
+        </select>
+
+        <input type="text" id="year_input" placeholder="Year(e.g. 2025)">
+
         <button onclick="movieApp()">Search</button>
     </div>
-   
+
     <div id="container"></div>
 
 </body>
