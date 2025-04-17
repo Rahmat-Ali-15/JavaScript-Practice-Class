@@ -27,8 +27,8 @@ function foundMovie(value) {
         let div = document.createElement("div");
         div.className = "parent_container"
         let div2 = document.createElement("div");
-        div2.className = "p_h3_container"
-        let Title = document.createElement("h3");
+        div2.className = "p_h5_container"
+        let Title = document.createElement("h5");
         let Year = document.createElement("p");
         let imdbID = document.createElement("p");
         let Type = document.createElement("p");
