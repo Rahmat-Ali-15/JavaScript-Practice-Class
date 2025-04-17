@@ -7,6 +7,12 @@ async function movieApp(defaultSearch = "") {
     let year = document.getElementById("year_input")?.value || "";
     // console.log(search);
 
+    // Check if search is empty (only for user search, not default load)
+    if (!defaultSearch && search === "") {
+        alert("Please enter a movie name to search.");
+        return; // stop the function here
+    }
+
     let api = movieUrl + `&s=${search}&y=${year}&type=${type}`;
     
     try {
@@ -14,6 +20,14 @@ async function movieApp(defaultSearch = "") {
         let data = await res.json();
         console.log(data.Search);
         foundMovie(data.Search);
+
+    //  Clear the search input after showing results
+        if (!defaultSearch) {
+            document.getElementById("search").value = "";
+            document.getElementById("year_input").value = "";
+            document.getElementById("select_type").value = "All Type"
+        }
+
     } catch (error) {
         console.log(error);
     }
@@ -36,7 +50,7 @@ function foundMovie(value) {
 
         Title.innerText = `Title: ${el.Title}`;
         Year.innerText = `Year: ${el.Year}`
-        imdbID.innerText = `imdbID: ${el.imdbID}`;
+        imdbID.innerText = `IMDB ID: ${el.imdbID}`;
         Type.innerText = `Type: ${el.Type}`;
         Poster.src = `${el.Poster}`;
 

@@ -10,7 +10,6 @@ body{
 header {
   height: 130px;
   color: white;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,6 +46,7 @@ header p{
 }
 #search:focus{
   border: 1px solid white;
+  background-color: #222222;
 }
 .search_bar_container>select{
   width: 200px;
@@ -89,6 +89,7 @@ header p{
   color: black;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
 }
 .search_bar_container>button:focus{
   border: 1px solid white;
