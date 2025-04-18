@@ -46,7 +46,7 @@ header p{
 }
 #search:focus{
   border: 1px solid white;
-  background-color: #222222;
+  background-color: #222222 !important;
 }
 .search_bar_container>select{
   width: 200px;
