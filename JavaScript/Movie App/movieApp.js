@@ -6,6 +6,10 @@ async function movieApp(defaultSearch = "") {
     let type = document.getElementById("select_type")?.value || "";
     let year = document.getElementById("year_input")?.value || "";
     // console.log(search);
+    const main = document.getElementById("container");
+
+     // Show loading message before fetch
+        main.innerHTML = `<p style="color:white; font-size:20px; width: 88vw; text-align:center;">Loading...</p>`;
 
     // Check if search is empty (only for user search, not default load)
     if (!defaultSearch && search === "") {
@@ -53,6 +57,12 @@ function foundMovie(value) {
         imdbID.innerText = `IMDB ID: ${el.imdbID}`;
         Type.innerText = `Type: ${el.Type}`;
         Poster.src = `${el.Poster}`;
+        // Poster.src = `${el.Poster}`;
+        Poster.style.cursor = "pointer";
+        Poster.addEventListener("click", () => {
+            window.open(`https://www.imdb.com/title/${el.imdbID}`, "_blank");
+        });
+
 
         div2.append(Title, Year, imdbID, Type);
         div.append(div2, Poster);
