@@ -73,3 +73,7 @@ console.log(Math.pow(2,5));
 
 console.log(Math.random());
 
+
+// Math.trunc() ==> It  returns the integer part of a number by removing any fractional digits.
+
+console.log(Math.trunc(13.84));  // Output: 13
