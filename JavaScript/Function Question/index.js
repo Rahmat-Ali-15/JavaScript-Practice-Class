@@ -144,20 +144,56 @@
 // 10. Write a function that takes a number and returns `true` if it’s a prime number, otherwise `false`.
 
 
-function isPrime(num) {
-    if (num < 2) {
+// function isPrime(num) {
+//     if (num < 2) {
+//         return false;
+//     }
+//     for (let i = 2; i < num; i++) {
+//         if (num % i === 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// let output = isPrime(100);
+// console.log(output);
+
+
+// Write a function to add two numbers.
+
+function sum(a, b) {
+    return a + b;
+}
+let ans1 = sum(5, 8);
+console.log(ans1);
+
+
+// Write a function that returns the square of a number.
+
+function squareNumber(a){
+    return a**2;
+}
+let ans2 = squareNumber(5);
+console.log(ans2);
+
+
+// Write a function to check if a number is even or odd.
+
+function isEven(num){
+    if(num === 0 || num === ""){
         return false;
     }
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            return false;
-        }
+    else if(num % 2 === 0){
+        return true;
     }
-    return true;
+    else{
+        return false;
+    }
 }
 
-let output = isPrime(100);
-console.log(output);
+let ans3 = isEven(4);
+console.log(ans3);
 
 
 // ### **Advanced Function Problems**
