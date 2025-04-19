@@ -215,12 +215,79 @@ console.log(ans4);
 
 // Write a function to calculate the factorial of a number.
 
-// function calFactorial(a){
-//     let num = 1;
-//     for(let i= 1; 
+function calFactorial(a) {
+    let num = 1;
+    for (let i = 1; i <= a; i++) {
+        num = num * i;
+    }
+    return num;
+}
+let ans5 = calFactorial(5);
+console.log(ans5);
 
-//      )
-// }
+
+// Write a function to reverse a string.
+
+function revString(str) {
+    let revStr = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        revStr += str[i];
+    }
+    return revStr
+}
+let ans7 = revString("hello")
+console.log(ans7);
+
+
+// Write a function that takes an array and returns the sum of its elements.
+
+function retSum(arr) {
+    let res = 0;
+    for (let i = 0; i < arr.length; i++) {
+        res += arr[i];
+    }
+    return res;
+}
+let ans8 = retSum([8, 6, 9, 3]);
+console.log(ans8);
+
+
+// Write a function to check if a string is a palindrome.
+
+function isPalindrom(str) {
+    let revStr = str.split("");
+    let result = ""
+    for (let i = str.length - 1; i >= 0; i--) {
+        result += revStr[i];
+    }
+    if(result === str){
+        return true;
+    }
+    else{
+        return false
+    }
+}
+let ans9 = isPalindrom("madam");
+console.log(ans9);
+
+// 2nd method
+
+function isPalindrom1(str1){
+    return str1 === str1.split("").reverse().join("")
+}
+let output = isPalindrom1("madam");
+console.log(output);
+
+
+// Write a function that takes another function as a parameter and calls it.
+
+function callMe(callBack){
+    console.log("Rahmat");
+    callBack();
+}
+callMe(()=>{
+    console.log("Hello from the callBack");
+})
 
 // ### **Advanced Function Problems**
 
