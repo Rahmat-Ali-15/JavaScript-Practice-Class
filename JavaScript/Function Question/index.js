@@ -171,8 +171,8 @@ console.log(ans1);
 
 // Write a function that returns the square of a number.
 
-function squareNumber(a){
-    return a**2;
+function squareNumber(a) {
+    return a ** 2;
 }
 let ans2 = squareNumber(5);
 console.log(ans2);
@@ -180,14 +180,14 @@ console.log(ans2);
 
 // Write a function to check if a number is even or odd.
 
-function isEven(num){
-    if(num === 0 || num === ""){
+function isEven(num) {
+    if (num === 0 || num === "") {
         return false;
     }
-    else if(num % 2 === 0){
+    else if (num % 2 === 0) {
         return true;
     }
-    else{
+    else {
         return false;
     }
 }
@@ -195,6 +195,32 @@ function isEven(num){
 let ans3 = isEven(4);
 console.log(ans3);
 
+
+// Write a function to return the maximum of two numbers.
+
+function maxNumber(a, b) {
+    if (a > b) {
+        return a;
+    }
+    else if (b > a) {
+        return b;
+    }
+    else {
+        return a; // if both numbers are equal return either a or b.
+    }
+}
+let ans4 = maxNumber(20, 10);
+console.log(ans4);
+
+
+// Write a function to calculate the factorial of a number.
+
+// function calFactorial(a){
+//     let num = 1;
+//     for(let i= 1; 
+
+//      )
+// }
 
 // ### **Advanced Function Problems**
 
