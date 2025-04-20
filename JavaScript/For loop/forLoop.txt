@@ -1,0 +1,7 @@
+For loop ==> It is a type of loop. It is used when we know how many times code will be run. In this loop we have three parts. First one is initialization, in this part we initialized the itrator. Second part is condition in which we write a condition according to the questions. And last part is updation in which we write either increament or decreament according to the given questions.
+
+syntax
+
+for(initialization; condition; updation){
+    code
+}
