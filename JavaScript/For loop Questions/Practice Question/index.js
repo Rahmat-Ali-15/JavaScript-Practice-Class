@@ -54,18 +54,27 @@
 // Write a program to find a Armstrong number.
 
 
-let num = 412;
-let digit = num.toString().split("").map(Number);
-let digitSum = 0
-for (i = 0; i < digit.length; i++) {
-    let cube = Math.pow(digit[i], 3)
-    digitSum += cube
-    // console.log(digitSum)
-}
-if (num === digitSum) {
-    console.log(digitSum, "It is a Armstrong Number")
-}
-else {
-    console.log(digitSum, "is not a Armstrong Number")
-}
+// let num = 412;
+// let digit = num.toString().split("").map(Number);
+// let digitSum = 0
+// for (i = 0; i < digit.length; i++) {
+//     let cube = Math.pow(digit[i], 3)
+//     digitSum += cube
+//     // console.log(digitSum)
+// }
+// if (num === digitSum) {
+//     console.log(digitSum, "It is a Armstrong Number")
+// }
+// else {
+//     console.log(digitSum, "is not a Armstrong Number")
+// }
 
+
+
+// Print all numbers from 1 to 50 that are divisible by 3.
+
+for(let i = 1; i<=50; i++){
+    if(i % 3 === 0){
+        console.log(i);
+    }
+}
