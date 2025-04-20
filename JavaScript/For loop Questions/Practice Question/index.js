@@ -73,8 +73,28 @@
 
 // Print all numbers from 1 to 50 that are divisible by 3.
 
-for(let i = 1; i<=50; i++){
-    if(i % 3 === 0){
+// for(let i = 1; i<=50; i++){
+//     if(i % 3 === 0){
+//         console.log(i);
+//     }
+// }
+
+
+
+// Print first 10 odd numbers.
+
+
+for (let i = 0; i <= 19; i++) {
+    if (i % 2 !== 0) {
         console.log(i);
     }
+}
+
+// 2nd method
+
+let count = 0;
+
+for (let i = 1; count < 10; i += 2) {
+    console.log(i);
+    count++
 }
