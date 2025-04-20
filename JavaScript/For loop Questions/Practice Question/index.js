@@ -83,7 +83,7 @@
 
 // Print first 10 odd numbers.
 
-
+/*
 for (let i = 0; i <= 19; i++) {
     if (i % 2 !== 0) {
         console.log(i);
@@ -98,10 +98,66 @@ for (let i = 1; count < 10; i += 2) {
     console.log(i);
     count++
 }
-
+*/
 
 // Print the square of numbers from 1 to 10.
 
-for (let i = 1; i<= 5; i++){
-    console.log(i*i);
+/*
+for (let i = 1; i<= 10; i++){
+    console.log(`${i} x ${i} = ${i*i}`);
+}*/
+
+
+// Print the multiplication table of 5.
+
+/*
+for ( let i = 1; i<=10; i++){
+    console.log(`${5} x ${i} = ${i*5}`);
 }
+*/
+
+
+// Calculate the sum of numbers from 1 to 100.
+
+/*
+let sum = 0;
+for ( let i = 1; i<=100; i++){
+    sum += i;
+}
+console.log(sum, "is the sum of numbers from 1 to 100.");
+*/
+
+// Print the factorial of a given number (e.g. 5! = 120).
+
+/*
+let count = 5;
+let factStart = 1;
+for ( let i = 1; i<=count; i++){
+    factStart *=i;
+}
+console.log(factStart);
+*/
+
+// Print all the digits of a number (e.g., for 1234 → 1, 2, 3, 4).
+
+/*
+let numbers = 1234;
+let digit = numbers.toString();
+
+for ( let i = 0; i< digit.length; i++){
+    console.log(+digit[i]);
+}
+*/
+
+// Calculate the sum of digits of a number (e.g., 123 → 6).
+
+/*
+let num = 456;
+let numStr = num.toString();
+let sum = 0;
+for ( let i = 0; i<numStr.length; i++){
+    sum += +numStr[i];
+}
+console.log(sum);
+*/
+
