@@ -8,8 +8,8 @@ async function movieApp(defaultSearch = "") {
     // console.log(search);
     const main = document.getElementById("container");
 
-     // Show loading message before fetch
-        main.innerHTML = `<p style="color:white; font-size:20px; width: 88vw; text-align:center;">Loading...</p>`;
+    // Show loading message before fetch
+    main.innerHTML = `<p style="color:white; font-size:20px; width: 88vw; text-align:center;">Loading...</p>`;
 
     // Check if search is empty (only for user search, not default load)
     if (!defaultSearch && search === "") {
@@ -18,18 +18,18 @@ async function movieApp(defaultSearch = "") {
     }
 
     let api = movieUrl + `&s=${search}&y=${year}&type=${type}`;
-    
+
     try {
         let res = await fetch(api);
         let data = await res.json();
         console.log(data.Search);
         foundMovie(data.Search);
 
-    //  Clear the search input after showing results
+        //  Clear the search input after showing results
         if (!defaultSearch) {
             document.getElementById("search").value = "";
             document.getElementById("year_input").value = "";
-            document.getElementById("select_type").value = "All Type"
+            // document.getElementById("select_type").value = "All Type"
         }
 
     } catch (error) {
@@ -60,7 +60,7 @@ function foundMovie(value) {
         // Poster.src = `${el.Poster}`;
         Poster.style.cursor = "pointer";
         Poster.addEventListener("click", () => {
-            window.open(`https://www.imdb.com/title/${el.imdbID}`, "_blank");
+            window.open(`https://omdbapi.com/?apikey=3e431991&i=${el.imdbID}`, "_blank");
         });
 
 
@@ -75,7 +75,7 @@ function foundMovie(value) {
 /*window.onload = function () {
     document.getElementById("search").value = "Avengers";
     movieApp();
-};*/ 
+};*/
 
 
 // Avengers word will not show in the movie name input
