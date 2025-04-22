@@ -46,6 +46,8 @@ function foundMovie(value) {
         div.className = "parent_container"
         let div2 = document.createElement("div");
         div2.className = "p_h5_container"
+       
+
         let Title = document.createElement("h5");
         let Year = document.createElement("p");
         let imdbID = document.createElement("p");
@@ -63,13 +65,83 @@ function foundMovie(value) {
             window.open(`https://omdbapi.com/?apikey=3e431991&i=${el.imdbID}`, "_blank");
         });
 
-
         div2.append(Title, Year, imdbID, Type);
         div.append(div2, Poster);
         main.append(div);
 
     })
 }
+
+// let descriptionAPI= `${movieUrl}&i=${imdbID}`
+
+// async function movieDescription() {
+//     let descriptionAPI= `https://omdbapi.com/?apikey=3e431991&i=${el.imdbID}`
+    
+//     try {
+//         let res = await fetch(descriptionAPI);
+//         let description = await res.json();
+//         movieDescription(description)
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// function movieDescription(val){
+//     let main2 = document.getElementById("movie_description");
+//     main2.innerHTML = "";  // clear previous results
+
+//     val.forEach(()=>{
+//         let detalsDiv = document.createElement("div");
+
+//         let Rated = document.createElement("p");
+//         let Released = document.createElement("p");
+//         let Runtime = document.createElement("p");
+//         let Gener = document.createElement("p");
+//         let Director = document.createElement("h4");
+//         let Writer = document.createElement("p");
+//         let Actors = document.createElement("p");
+//         let Plot = document.createElement("p");
+//         let Language = document.createElement("p");
+//         let Country = document.createElement("p");
+//         let Awards = document.createElement("p");
+//         // let Posters = document.createElement("p");
+//         let Ratings = document.createElement("p");
+//         let Metascore = document.createElement("p");
+//         let imdbRating = document.createElement("p");
+//         let imdbVotes = document.createElement("p");
+//         let DVD = document.createElement("p");
+//         let Boxoffice = document.createElement("p");
+//         let Website = document.createElement("p");
+//         let Response = document.createElement("p");
+
+//         Rated.innerText = `{Rated: ${el.Rated}}`;
+//         Released.innerText = `{Released: ${el.Realeased}}`;
+//         Runtime.innerText = `{Runtime: ${el.Runtime}}`;
+//         Gener.innerText = `{Gener: ${el.Gener}}`;
+//         Director.innerText = `{Director: ${el.Director}}`;
+//         Writer.innerText = `{Writer: ${el.Writer}}`;
+//         Actors.innerText = `{Actors: ${el.Actors}}`;
+//         Plot.innerText = `{Plot: ${el.Plot}}`;
+//         Language.innerText = `{Language: ${el.Language}}`;
+//         Country.innerText = `{Country: ${el.Country}}`;
+//         Awards.innerText = `{Awards: ${el.Awards}}`;
+//         // Posters.innerText = `{Posters: ${el.Poster}}`;
+//         Ratings.innerText = `{Ratings: ${el.Ratings}}`;
+//         Metascore.innerText = `{Metascore: ${el.Metascore}}`;
+//         imdbRating.innerText = `{imdbRating: ${el.imdbRating}}`;
+//         imdbVotes.innerText = `{imdbVotes: ${el.imdbVotes}}`;
+//         DVD.innerText = `{DVD: ${el.DVD}}`;
+//         Boxoffice.innerText = `{Boxoffice: ${el.Boxoffice}}`;
+//         Website.innerText = `{Website: ${el.Website}}`;
+//         Response.innerText = `{Response: ${el.Response}}`;
+
+
+//         detalsDiv.append(Rated,Released, Runtime, Gener, Director, Writer,Actors, Plot, Language, Country, Awards, Ratings, Metascore, imdbRating, imdbVotes, DVD, Boxoffice, Website, Response);
+//         main2.append(div)
+//     })
+
+// }
+
 
 // Avengers word will show in the movie name input
 /*window.onload = function () {
