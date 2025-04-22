@@ -1,0 +1,30 @@
+                                                            How to create modal?
+<---------------------------------------------------------------------------------------------------------------------------------------->
+1 -> To create modal first we have to create a button which is outside the modal conatiner.
+
+2 -> After creating button we have to create a modal container where we write the modal content.
+
+3 -> After that add style to the both button and modal.
+
+4 -> To open or close modal, we have to use javaScript.
+
+There are two method to open or close modal
+
+i -> by using onclick="function name", It is used inside the html tag 
+
+ii -> by using addEventListner("click",function name)
+
+To use addEventListner we first we have to assign a variable like 
+
+let btn_click = document.querySelector("tagName,id,className");
+
+then we have to write this
+
+variableName.addEventListner("click",functionName);
+
+<-------------------------------------------------------------Note----------------------------------------------------------------------->
+
+classList.add => It is used to add class name to the html tag.
+classList.remove => It is used to remove class name to the html tag.
+
+querySelector => By using this we can select a class name, id, or tag name of html.
