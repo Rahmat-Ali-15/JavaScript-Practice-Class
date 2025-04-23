@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="form_container">
+        <form action="./submitData.html" onsubmit="return myValidation()">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="User_Name" placeholder="Please enter username">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="User_Email" id="email" placeholder="Please enter your email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="User_Password" id="password" placeholder="Enter your password">
+            </div>
+            <div>
+                <label for="c_password">Confirm Password</label>
+                <input type="password" name="User_Password" id="c_password" placeholder="Enter confirm password">
+            </div>
+            <div>
+                <label for="contact">Contact</label>
+                <input type="tel" name="User_Contact" id="contact" placeholder="Please enter your number">
+            </div>
+            <div>
+                <input type="submit" value="Submit your data" id="" class="btn">
+            </div>
+
+        </form>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
