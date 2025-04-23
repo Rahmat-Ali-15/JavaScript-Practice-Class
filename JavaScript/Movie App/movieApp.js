@@ -9,9 +9,11 @@ async function movieApp(defaultSearch = "") {
     const main = document.getElementById("container");
 
     // Show loading message before fetch
+
     main.innerHTML = `<p style="color:white; font-size:20px; width: 88vw; text-align:center;">Loading...</p>`;
 
     // Check if search is empty (only for user search, not default load)
+
     if (!defaultSearch && search === "") {
         alert("Please enter a movie name to search.");
         return; // stop the function here
@@ -59,49 +61,30 @@ function foundMovie(value) {
         imdbID.innerText = `IMDB ID: ${el.imdbID}`;
         Type.innerText = `Type: ${el.Type}`;
         Poster.src = `${el.Poster}`;
-        // Poster.src = `${el.Poster}`;
         Poster.style.cursor = "pointer";
-        // Poster.addEventListener("click", () => {
-        //     window.open(`https://omdbapi.com/?apikey=3e431991&i=${el.imdbID}`, "_blank");
-        // });
-
-
+        
+        // Adding a More info button on each div
         const btn = document.createElement("button")
-        btn.innerText = "click"
+        btn.innerText = "More Info..."
         btn.id= "btn_modal"
-
-        // const btn_modal = document.getElementById("btn_modal");
-        // const modalContainer = document.getElementById("modal-container")
-        // const modal_close_btn = document.getElementById("modal_close_btn")
-
-        // btn_modal.addEventListener('click', ()=>{
-        //     modalContainer.classlist.add("show");
-        // });
-
-
-
-        div2.append(Title, Year, imdbID, Type);
-        div.append(div2, Poster, btn);
 
         btn.addEventListener("click", function () {
             movieDescription(el.imdbID)
-        })
+        });
 
+        div2.append(Title, Year, imdbID, Type);
+        div.append(div2, Poster, btn);
         main.append(div);
 
     })
 }
 
-// let descriptionAPI= `${movieUrl}&i=${imdbID}`
-
 async function movieDescription(id) {
-    // console.log("invoked");
     let descriptionAPI = `https://omdbapi.com/?apikey=3e431991&i=${id}`
 
     try {
         let res = await fetch(descriptionAPI);
         let description = await res.json();
-        // console.log(description, `this is our data`);
         movieDetails(description)
     } catch (error) {
         console.log(error);
@@ -109,8 +92,10 @@ async function movieDescription(id) {
 }
 
 function movieDetails(val) {
-    let main2 = document.getElementById("movie_description");
-    main2.innerHTML = "";  // clear previous results
+    let showDetails = document.querySelector(".modal_container");
+    showDetails.innerHTML = "";  // clear previous results
+
+    showDetails.classList.add("show_modal");
 
 
     let detalsDiv = document.createElement("div");
@@ -118,7 +103,7 @@ function movieDetails(val) {
     let Rated = document.createElement("p");
     let Released = document.createElement("p");
     let Runtime = document.createElement("p");
-    let Gener = document.createElement("p");
+    let Genre = document.createElement("p");
     let Director = document.createElement("h4");
     let Writer = document.createElement("p");
     let Actors = document.createElement("p");
@@ -126,40 +111,45 @@ function movieDetails(val) {
     let Language = document.createElement("p");
     let Country = document.createElement("p");
     let Awards = document.createElement("p");
-    // let Posters = document.createElement("p");
+    let Posters = document.createElement("img");
     let Ratings = document.createElement("p");
     let Metascore = document.createElement("p");
     let imdbRating = document.createElement("p");
     let imdbVotes = document.createElement("p");
     let DVD = document.createElement("p");
-    let Boxoffice = document.createElement("p");
+    let BoxOffice = document.createElement("p");
     let Website = document.createElement("p");
     let Response = document.createElement("p");
 
-    Rated.innerText = `Rated: ${val.Rated}`;
-    Released.innerText = `Released: ${val.Realeased}`;
-    Runtime.innerText = `Runtime: ${val.Runtime}`;
-    Gener.innerText = `Gener: ${val.Gener}`;
-    Director.innerText = `Director: ${val.Director}`;
-    Writer.innerText = `Writer: ${val.Writer}`;
-    Actors.innerText = `Actors: ${val.Actors}`;
-    Plot.innerText = `Plot: ${val.Plot}`;
-    Language.innerText = `Language: ${val.Language}`;
-    Country.innerText = `Country: ${val.Country}`;
-    Awards.innerText = `Awards: ${val.Awards}`;
-    // Posters.innerText = `Posters: ${val.Poster}`;
-    Ratings.innerText = `Ratings: ${val.Ratings}`;
-    Metascore.innerText = `Metascore: ${val.Metascore}`;
-    imdbRating.innerText = `imdbRating: ${val.imdbRating}`;
-    imdbVotes.innerText = `imdbVotes: ${val.imdbVotes}`;
-    DVD.innerText = `DVD: ${val.DVD}`;
-    Boxoffice.innerText = `Boxoffice: ${val.Boxoffice}`;
-    Website.innerText = `Website: ${val.Website}`;
-    Response.innerText = `Response: ${val.Response}`;
 
 
-    detalsDiv.append(Rated, Released, Runtime, Gener, Director, Writer, Actors, Plot, Language, Country, Awards, Ratings, Metascore, imdbRating, imdbVotes, DVD, Boxoffice, Website, Response);
-    main2.append(detalsDiv)
+    Rated.innerHTML = `<span class="info">Rated:</span> ${val.Rated}`;
+    Released.innerHTML = `<span class="info">Released:</span>${val.Released}`;
+    Runtime.innerHTML = `<span class="info">Runtime:</span> ${val.Runtime}`;
+    Genre.innerHTML = `<span class="info">Genre:</span> ${val.Genre}`;
+    Director.innerHTML = `<span class="info">Director:</span> ${val.Director}`;
+    Writer.innerHTML = `<span class="info">Writer:</span> ${val.Writer}`;
+    Actors.innerHTML = `<span class="info">Actors:</span> ${val.Actors}`;
+    Plot.innerHTML = `<span class="info">Plot:</span> ${val.Plot}`;
+    Language.innerHTML = `<span class="info">Language:</span> ${val.Language}`;
+    Country.innerHTML = `<span class="info">Country:</span> ${val.Country}`;
+    Awards.innerHTML = `<span class="info">Awards:</span> ${val.Awards}`;
+    Posters.src = `${val.Poster}`;
+    // Posters.style.height = "50px";
+    // Posters.style.width = "50px";
+    Ratings.innerHTML = `<span class="info">Source:</span> ${val.Ratings[0].Source}<span class="info">Value:</span> ${val.Ratings[0].Value}`;
+    // rating.innerText = `Rating Rate: ${el.rating.rate}\nRating Count: ${el.rating.count}`;
+    Metascore.innerHTML = `<span class="info">Metascore:</span> ${val.Metascore}`;
+    imdbRating.innerHTML = `<span class="info">imdbRating:</span> ${val.imdbRating}`;
+    imdbVotes.innerHTML = `<span class="info">imdbVotes:</span> ${val.imdbVotes}`;
+    DVD.innerHTML = `<span class="info">DVD: ${val.DVD}`;
+    BoxOffice.innerHTML = `<span class="info">BoxOffice:</span> ${val.BoxOffice}`;
+    Website.innerHTML = `<span class="info">Website:</span> ${val.Website}`;
+    Response.innerHTML = `<span class="info">Response:</span> ${val.Response}`;
+
+
+    detalsDiv.append(Posters,Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Ratings, Metascore, imdbRating, imdbVotes, DVD, BoxOffice, Website, Response);
+    showDetails.append(detalsDiv)
 
 
 }
@@ -178,12 +168,3 @@ window.onload = function () {
     movieApp("Avengers"); // But don't show it in the input
 };
 
-
-
-const btn_modal = document.getElementById("btn_modal");
-const modalContainer = document.getElementById("modal-container")
-const modal_close_btn = document.getElementById("modal_close_btn")
-
-btn_modal.addEventListener('click', ()=>{
-        modalContainer.classlist.add("show");
-    });
