@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="./login.css">
 </head>
+
 <body>
     <div class="form_container">
-        
-        <form action="">
+
+        <form onsubmit="loginValidation(event)">
             <h1>Login</h1>
             <div>
-                <label for="username">Email</label>
-                <input type="email" name="User_Email" id="" placeholder="Email Id">
+                <label for="loginemail">Email</label>
+                <input type="email" name="User_Email" id="loginemail" placeholder="Email Id">
             </div>
             <div>
-                <label for="password">Password</label>
-                <input type="password" name="User_Password" id="" placeholder="Password">
+                <label for="loginpassword">Password</label>
+                <input type="password" name="User_Password" id="loginpassword" placeholder="Password">
+            </div>
+            <div>
+                <input type="submit" value="Click here" id="lbtn">
             </div>
         </form>
+
     </div>
 </body>
+<script src="./login.js"></script>
+
 </html>
