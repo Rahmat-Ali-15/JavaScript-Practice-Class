@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="form_container">
-        <form action="./submitData.html" onsubmit="return myValidation()">
+        <form onsubmit="myValidation(event)">
             <div>
                 <label for="username">Username</label>
-                <input type="text" name="User_Name" placeholder="Please enter username">
+                <input type="text" name="User_Name" placeholder="Please enter username" id="username">
             </div>
             <div>
                 <label for="email">Email</label>
@@ -30,11 +30,12 @@
                 <input type="tel" name="User_Contact" id="contact" placeholder="Please enter your number">
             </div>
             <div>
-                <input type="submit" value="Submit your data" id="" class="btn">
+                <input type="submit" value="Submit your data" class="btn">
             </div>
 
         </form>
     </div>
 </body>
 <script src="./index.js"></script>
+
 </html>
