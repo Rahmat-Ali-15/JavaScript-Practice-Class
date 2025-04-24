@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <h1>IMDB MOVIE APP 🎬</h1>
+        <p>Search movies or series instantly.</p>
+    </header>
+    <main>
+        <!-- search part start from here. -->
+        <div class="search_container">
+            <input type="search" name="User_Search_Movie" id="search_movie" placeholder="Enter movie name...">
+            <select name="" id="select_movie">
+                <option value="">All Type</option>
+                <option value="Movie">Movie</option>
+                <option value="Series">Series</option>
+            </select>
+            <input type="Search" name="Released_Year" id="year" placeholder="Year(e.g 2025)">
+            <button type="button">Search</button>
+        </div>
+        <!-- search part end here. -->
+
+        <!-- Movies_Container part start from here. -->
+
+        <div class="movies_container"></div>
+
+        <!-- Movies part end here. -->
+        
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
