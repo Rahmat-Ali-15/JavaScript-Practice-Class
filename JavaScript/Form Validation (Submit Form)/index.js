@@ -1,9 +1,21 @@
-function myValidation(){
+function myValidation(event) {
+    event.preventDefault();
 
     let User_Email = document.getElementById("email").value;
     let User_Password = document.getElementById("password").value;
     let User_Confirm_Password = document.getElementById("c_password").value;
     let User_Contact = document.getElementById("contact").value;
+
+
+    let object = {
+        email: User_Email,
+        password: User_Password,
+        confirm_password: User_Confirm_Password,
+        contact: User_Contact,
+    }
+
+    // console.log(object);
+    localStorage.setItem("userData", JSON.stringify(object));
 
     if(User_Email==="" || User_Password === "" || User_Confirm_Password === "" || User_Contact === ""){
         alert("All fields are mendatory!")
@@ -29,7 +41,7 @@ function myValidation(){
 
     if(User_Password === null){
         if(User_Password !== User_Confirm_Password){
-            
+
         }
         else if(User_Password.trim() === ""){
             console.log("Please enter the password");
