@@ -9,6 +9,7 @@
 <body>
     <div class="form_container">
         <form onsubmit="myValidation(event)">
+            <h1>Create Account</h1>
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="User_Name" placeholder="Please enter username" id="username">
@@ -16,23 +17,30 @@
             <div>
                 <label for="email">Email</label>
                 <input type="email" name="User_Email" id="email" placeholder="Please enter your email">
+                <span class="email_error"></span>
             </div>
             <div>
                 <label for="password">Password</label>
                 <input type="password" name="User_Password" id="password" placeholder="Enter your password">
+                <span class="password_error"></span>
             </div>
             <div>
                 <label for="c_password">Confirm Password</label>
                 <input type="password" name="User_Password" id="c_password" placeholder="Enter confirm password">
+                <span class="confirm_password_error"></span>
             </div>
             <div>
                 <label for="contact">Contact</label>
                 <input type="tel" name="User_Contact" id="contact" placeholder="Please enter your number">
+                <span class="contact_error"></span>
             </div>
             <div>
-                <input type="submit" value="Submit your data" class="btn">
+                <input type="submit" value="Sign Up" class="btn">
             </div>
-
+            <div class="login_page_link">
+                <p>Already have an account?</p>
+                <a href="./login.html">Login now</a>
+            </div>
         </form>
     </div>
 </body>
