@@ -1,25 +1,29 @@
 function myValidation(event) {
     event.preventDefault();
+
+    // Get values
     let User_Email = document.querySelector(".user_email").value;
     let User_Pass = document.querySelector(".user_pass").value;
 
+    // Get error span elements
+    let email_error = document.getElementById("error_email");
+    let password_error = document.getElementById("pass_error");
 
     // email validation
-
     if (User_Email === "") {
-        console.log("please enter email...");
+        error_email.textContent = "Please enter email.";
     }
     else if (User_Email.indexOf("@") <= 0) {
-        console.log("the given email is invalid");
+        email_error.textContent = "email must contain @";
     }
     else if (
         User_Email.charAt(User_Email.length - 4) === "." ||
         User_Email.charAt(User_Email.length - 3) === "."
     ) {
-        console.log("Valid email...");
+        email_error.textContent ="Valid email...";
     }
     else {
-        console.log("Inavlid email please check???");
+        email_error.textContent ="Inavlid email please check???";
     }
 
     // password validation
@@ -31,8 +35,8 @@ function myValidation(event) {
     if (User_Pass.trim() === "") {
         console.log("please enter the password.");
     }
-    else if (user_pass.length <= 8 || user_pass.length > 20) {
-        console.log("password must be equal to 8 or less than 20 characters.");
+    else if (User_Pass.length <= 8 || User_Pass.length > 20) {
+        password_error.textContent = "password must be equal to 8 or less than 20 characters.";
     }
     else {
         const hasUpeerCase = /[A-Z]/.test(User_Pass);
@@ -40,19 +44,19 @@ function myValidation(event) {
         const hasNumber = /[0-9]/.test(User_Pass);
         const hasSpacialChar = /[!@#$%^&*(),./?";:{}|<>]/.test(User_Pass);
         if (!hasUpeerCase) {
-            console.log("password must include at least one uppercase letter.");
+            password_error.textContent = "password must include at least one uppercase letter.";
         }
         else if (!hasLowerCase) {
-            console.log("password must include at least one lowercase letter.");
+            password_error.textContent = "password must include at least one lowercase letter.";
         }
         else if (!hasNumber) {
-            console.log("password must include at least one number.");
+            password_error.textContent = "password must include at least one number.";
         }
         else if (!hasSpacialChar) {
-            console.log("password must include at least one special charater.");
+            password_error.textContent = "password must include at least one special charater.";
         }
         else {
-            console.log("Valid password");
+            password_error.textContent = "Valid password";
         }
     }
 }
