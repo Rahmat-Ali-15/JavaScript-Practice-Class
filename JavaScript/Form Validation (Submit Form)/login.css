@@ -72,6 +72,51 @@ form div{
     border-radius: 8px;
 }
 
+/* Modal container (hidden by default) */
+.modal_container {
+    height: 500px;
+    display: none; /* Hide the modal */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+/* Modal content */
+.modal_content {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to left,#d3e2ec,rgb(120, 115, 154));
+    padding: 70px 20px 20px 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 0px;
+    color: black;
+}
+/* JavaScript content */
+.signUp_data_container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 
 /* media query */
 
