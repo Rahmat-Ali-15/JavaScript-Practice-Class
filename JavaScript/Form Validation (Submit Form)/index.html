@@ -13,10 +13,11 @@
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="User_Name" placeholder="Please enter username" id="username">
+                <span class="username_error"></span>
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="User_Email" id="email" placeholder="Please enter your email">
+                <input type="text" name="User_Email" id="email" placeholder="Please enter your email">
                 <span class="email_error"></span>
             </div>
             <div>
@@ -35,7 +36,7 @@
                 <span class="contact_error"></span>
             </div>
             <div>
-                <input type="submit" value="Sign Up" class="btn">
+                <input type="submit" value="Sign Up" class="btn" id="sign-up-btn">
             </div>
             <div class="login_page_link">
                 <p>Already have an account?</p>
@@ -43,6 +44,24 @@
             </div>
         </form>
     </div>
+
+    <!-- modal part start from here. -->
+
+    <div class="modal_container">
+        <div class="img_p">
+            <img src="right_icon.png" alt="right_icon">
+            <p>SUCCESS</p>
+        </div>
+        <div class="btn_p">
+            <p>Congratulations, your account has been successfully created.</p>
+            <button type="button" id="continue_btn">Continue</button>
+        </div>
+       
+    </div>
+
+    <!-- modal part end here. -->
+     
+
 </body>
 <script src="./index.js"></script>
 
