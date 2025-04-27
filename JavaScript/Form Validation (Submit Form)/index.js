@@ -99,6 +99,7 @@ function myValidation(event) {
     // storing data in local storage
 
     let object = {
+        username: User_Name,
         email: User_Email,
         password: User_Password,
         confirm_password: User_Confirm_Password,
