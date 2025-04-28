@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    
+</head>
+<body>
+    <script type="module">
+        // default method
+        // import navbar from "./index.js"
+        // document.body.innerHTML = navbar();
+
+        // name export
+        import {navbar, style} from "./index.js"
+        document.body.innerHTML = navbar(2,5);
+
+        let styleTag = document.createElement("style");
+        styleTag.textContent = style();
+        document.head.append(styleTag)
+        
+    </script>
+</body>
+</html>
