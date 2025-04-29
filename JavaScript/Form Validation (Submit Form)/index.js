@@ -1,3 +1,6 @@
+
+let localStorageData = JSON.parse(localStorage.getItem("userData"));
+
 function myValidation(event) {
     event.preventDefault();
 
@@ -22,64 +25,64 @@ function myValidation(event) {
     UserName_Error.textContent = "";
 
 
-    if(User_Email=== "" || User_Password === "" || User_Confirm_Password === "" || User_Contact === ""){
+    if (User_Email === "" || User_Password === "" || User_Confirm_Password === "" || User_Contact === "") {
         alert("All fields are mendatory!")
         return false;
     }
 
     // UserName Validation
     const hasUpperCase = /[A-Z]/.test(User_Name);
-    if(hasUpperCase){
+    if (hasUpperCase) {
         UserName_Error.textContent = "username must be in small letter";
         return false;
     }
 
     // Email validation
 
-    if (User_Email.indexOf("@") <= 0){
-        Email_Error.textContent= `"@" cannot be at first place`;
+    if (User_Email.indexOf("@") <= 0) {
+        Email_Error.textContent = `"@" cannot be at first place`;
         return false;
     }
-    else if (User_Email.charAt(User_Email.length - 4) === "." || User_Email.charAt(User_Email.length - 3 ) === "."){
+    else if (User_Email.charAt(User_Email.length - 4) === "." || User_Email.charAt(User_Email.length - 3) === ".") {
     }
-    else{
-        Email_Error.textContent= "Invalid email! Please check??";
+    else {
+        Email_Error.textContent = "Invalid email! Please check??";
         return false;
     }
 
     // Password validation
 
-    if(User_Password.trim() === ""){
+    if (User_Password.trim() === "") {
         Password_Error.textContent = "Please enter the password";
         return false;
     }
-    else if (User_Password.length < 8 || User_Password.length > 20){
+    else if (User_Password.length < 8 || User_Password.length > 20) {
         Password_Error.textContent = "password must lies between 8 to 20 charector";
         return false;
     }
-    else if (User_Password !== User_Confirm_Password){
+    else if (User_Password !== User_Confirm_Password) {
         Confirm_Password_Error.textContent = "password must be same.";
         return false;
     }
-    else{
+    else {
         const hasUpperCase = /[A-Z]/.test(User_Password);
         const hasLowerCase = /[a-z]/.test(User_Password);
         const hasNumber = /[0-9]/.test(User_Password);
         const hasSpecialChar = /[!@#$%^&*()|\/;:<>?]/.test(User_Password);
 
-        if(!hasUpperCase){
+        if (!hasUpperCase) {
             Password_Error.textContent = "password must include at least one uppercase letter!"
             return false;
         }
-        else if(!hasLowerCase){
+        else if (!hasLowerCase) {
             Password_Error.textContent = "password must include at least one lowercase letter!"
             return false;
         }
-        else if(!hasNumber){
+        else if (!hasNumber) {
             Password_Error.textContent = "password must include at least one number!"
             return false;
         }
-        else if(!hasSpecialChar){
+        else if (!hasSpecialChar) {
             Password_Error.textContent = "password must include at least one special letter!"
             return false;
         }
@@ -87,14 +90,15 @@ function myValidation(event) {
 
     // Contact validation
 
-    if(User_Contact.length< 10 || User_Contact.length > 10){
+    if (User_Contact.length < 10 || User_Contact.length > 10) {
         Contact_Error.textContent = "Number Should be of 10 Digits!"
         return false;
     }
-    else if (isNaN(User_Contact)){
+    else if (isNaN(User_Contact)) {
         Contact_Error.textContent = "Only Numbers are allowed!"
         return false;
     }
+    let data = []
 
     // storing data in local storage
 
@@ -105,7 +109,9 @@ function myValidation(event) {
         confirm_password: User_Confirm_Password,
         contact: User_Contact,
     }
-    localStorage.setItem("userData", JSON.stringify(object));
+
+    data.push(object)
+    localStorage.setItem("userData", JSON.stringify([data, ...localStorageData]));
 
     // If everything is valid, open modal
     openModal();
@@ -113,13 +119,13 @@ function myValidation(event) {
 }
 
 // function for open modal
-function openModal(){
+function openModal() {
     document.querySelector(".modal_container").classList.add("show_modal");
 }
 
 // function for open login page when click the modal Continue button
-function openLoginPage(){
-    window.location.href= "./login.html"
+function openLoginPage() {
+    window.location.href = "./login.html"
 }
 let openLogin = document.querySelector("#continue_btn");
 openLogin.addEventListener("click", openLoginPage);
