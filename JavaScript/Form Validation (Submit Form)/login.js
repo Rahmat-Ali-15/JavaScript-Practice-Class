@@ -21,6 +21,10 @@ function loginValidation(event) {
 
     // Fetch signup data from localStorage
     let signupData = JSON.parse(localStorage.getItem("userData"));
+    console.log(signupData);
+
+
+    
 
     if (signupData) {
         if (signupData.email === User_Email && signupData.password === User_Password) {
