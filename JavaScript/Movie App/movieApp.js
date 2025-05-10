@@ -62,18 +62,24 @@ function foundMovie(value) {
         Type.innerText = `Type: ${el.Type}`;
         Poster.src = `${el.Poster}`;
         Poster.style.cursor = "pointer";
-        
+
         // Adding a More info button on each div
-        const btn = document.createElement("button")
+        /* const btn = document.createElement("button")
         btn.innerText = "More Info..."
         btn.id= "btn_modal"
 
         btn.addEventListener("click", function () {
             movieDescription(el.imdbID)
+        }); */
+
+        Poster.style.cursor = "pointer";
+        Poster.addEventListener("click", function () {
+            movieDescription(el.imdbID);
         });
 
+
         div2.append(Title, Year, imdbID, Type);
-        div.append(div2, Poster, btn);
+        div.append(div2, Poster);
         main.append(div);
 
     })
@@ -93,12 +99,28 @@ async function movieDescription(id) {
 
 function movieDetails(val) {
     let showDetails = document.querySelector(".modal_container");
+    let modalImg = document.querySelector(".modal_img");
+    let modalContent = document.querySelector(".modal_content")
     showDetails.innerHTML = "";  // clear previous results
+
+    let closeBtn = document.createElement("button");
+    closeBtn.innerText = "X";
+    closeBtn.className = "close_btn";
+    closeBtn.onclick = function () {
+        showDetails.classList.remove("show_modal"); // hide modal
+    };
+showDetails.appendChild(closeBtn);
+
+
 
     showDetails.classList.add("show_modal");
 
-
+    // <======================================================>
+    // Creating elements for content
+    // <======================================================>
     let detalsDiv = document.createElement("div");
+    let modal_img = document.createElement("div");
+    let modal_content = document.createElement("div");
 
     let Rated = document.createElement("p");
     let Released = document.createElement("p");
@@ -121,8 +143,9 @@ function movieDetails(val) {
     let Website = document.createElement("p");
     let Response = document.createElement("p");
 
-
-
+    // <=======================================================>
+    // Adding Value
+    // <=======================================================>
     Rated.innerHTML = `<span class="info">Rated:</span> ${val.Rated}`;
     Released.innerHTML = `<span class="info">Released:</span>${val.Released}`;
     Runtime.innerHTML = `<span class="info">Runtime:</span> ${val.Runtime}`;
@@ -135,21 +158,23 @@ function movieDetails(val) {
     Country.innerHTML = `<span class="info">Country:</span> ${val.Country}`;
     Awards.innerHTML = `<span class="info">Awards:</span> ${val.Awards}`;
     Posters.src = `${val.Poster}`;
-    // Posters.style.height = "50px";
-    // Posters.style.width = "50px";
     Ratings.innerHTML = `<span class="info">Source:</span> ${val.Ratings[0].Source}<span class="info">Value:</span> ${val.Ratings[0].Value}`;
-    // rating.innerText = `Rating Rate: ${el.rating.rate}\nRating Count: ${el.rating.count}`;
+
     Metascore.innerHTML = `<span class="info">Metascore:</span> ${val.Metascore}`;
     imdbRating.innerHTML = `<span class="info">imdbRating:</span> ${val.imdbRating}`;
     imdbVotes.innerHTML = `<span class="info">imdbVotes:</span> ${val.imdbVotes}`;
-    DVD.innerHTML = `<span class="info">DVD: ${val.DVD}`;
+    DVD.innerHTML = `<span class="info">DVD:</span> ${val.DVD}`;
     BoxOffice.innerHTML = `<span class="info">BoxOffice:</span> ${val.BoxOffice}`;
     Website.innerHTML = `<span class="info">Website:</span> ${val.Website}`;
     Response.innerHTML = `<span class="info">Response:</span> ${val.Response}`;
 
 
-    detalsDiv.append(Posters,Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Ratings, Metascore, imdbRating, imdbVotes, DVD, BoxOffice, Website, Response);
-    showDetails.append(detalsDiv)
+    modalImg.append(Posters);
+
+    modalContent.append(Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Ratings, Metascore, imdbRating, imdbVotes, DVD, BoxOffice, Website, Response);
+
+    detalsDiv.append(modalImg, modalContent);
+    showDetails.append(detalsDiv);
 
 
 }
