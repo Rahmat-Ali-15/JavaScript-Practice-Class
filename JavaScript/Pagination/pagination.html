@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="./pagination.css">
+    <script src="./pagination.js" defer></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <input type="button" value="Prev" class="btn1" onclick="prevBtn()">
+
+            <ul>
+                <li class="link active" value="1" onclick="activeLink()">1</li>
+                <li class="link" value="2" onclick="activeLink()">2</li>
+                <li class="link" value="3" onclick="activeLink()">3</li>
+                <li class="link" value="4" onclick="activeLink()">4</li>
+                <li class="link" value="5" onclick="activeLink()">5</li>
+            </ul>
+
+            <input type="button" value="Next..." class="btn2" onclick="nextBtn()">
+        </div>
+    </div>
+
+</body>
+
+</html>
