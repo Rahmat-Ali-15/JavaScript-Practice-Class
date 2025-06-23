@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman';
+    font-family: 'Times New Roman',sans-serif;
 }
 body{
     height: 100vh;
@@ -20,7 +20,7 @@ body{
     align-items: center;
     background-color: #f2e8ce;
 }
-.todo_content{
+.todo_app{
     width: 100%;
     padding: 30px;
     color: #dcd4b5;
@@ -28,29 +28,62 @@ body{
     border: none;
     border-radius: 10px;
 }
-.todo_content>h1{
+.todo_app>h1{
     font-size: 36px;
     font-weight: 400;
     margin-bottom: 30px;
 }
-.inp_btn{
+.todo_content{
     display: flex;
     gap: 10px;
 }
-.inp_btn input{
+.todo_content input{
     width: 90%;
     font-size: 22px;
     padding: 12px;
     border: 1px solid #b8b9a1;
     border-radius: 10px;
     background-color: #162619;
+    color: #ffffff;
 }
-.inp_btn button{
+.todo_content button{
     font-size: 19px;
     padding: 12px;
     border: 1px solid #b8b9a1;
     background-color: #162619;
     color: #dcd4b5;
     border-radius: 10px;
+    cursor: pointer;
+}
+.list_container{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    display: none;
+}
+.list_container li{
+    list-style-type: none;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ac7424;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.btn_container{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    
+}
+.btn_container button{
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 19px;
     cursor: pointer;
 }
