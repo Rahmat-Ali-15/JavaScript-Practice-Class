@@ -65,3 +65,64 @@ const addTask = ()=>{
 const addBtn = () => {
     listContainer.style.display = "flex";
 }
+
+listContainer.addEventListener("click", function (e) {
+    if (e.target.tagName === "BUTTON") {
+        const li = e.target.closest("li");
+        const idDiv = li.querySelector("small");
+        const id = idDiv.innerText.split("ID: ")[1];
+        
+        if (e.target.innerText === "EDIT") {
+            editTask(li, id);
+        } 
+        else if (e.target.innerText === "COMPLETED") {
+            completeTask(li, id);
+        } 
+        else if (e.target.innerText === "DELETED") {
+            deleteTask(li, id);
+        }
+    }
+});
+
+const editTask = (li, id) => {
+    const newTask = prompt("Edit your task:", li.firstChild.textContent.trim());
+    if (newTask) {
+        li.firstChild.textContent = newTask + " ";
+        // Update localStorage
+        arrStorage = arrStorage.map(item => {
+            if (item.id === id) {
+                item.todoInput = newTask;
+                item.isEdits = true;
+            }
+            return item;
+        });
+        localStorage.setItem("todoData", JSON.stringify(arrStorage));
+    }
+};
+
+const completeTask = (li, id) => {
+    li.style.textDecoration = "line-through";
+    li.style.color = "#888";
+    // Update localStorage
+    arrStorage = arrStorage.map(item => {
+        if (item.id === id) {
+            item.isCompleted = true;
+        }
+        return item;
+    });
+    localStorage.setItem("todoData", JSON.stringify(arrStorage));
+};
+
+const deleteTask = (li, id) => {
+    li.remove();
+    // Update localStorage
+    arrStorage = arrStorage.filter(item => item.id !== id);
+    localStorage.setItem("todoData", JSON.stringify(arrStorage));
+};
+
+inputBox.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        addTask();
+        addBtn();
+    }
+});
