@@ -18,6 +18,9 @@ window.addEventListener(
     },200)
 );
 
+
+// Without throttling
+
 // window.addEventListener("scroll", function(){
 //     console.log("Scroll event at :", new Date());
 // });
