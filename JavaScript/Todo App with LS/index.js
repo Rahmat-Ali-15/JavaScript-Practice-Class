@@ -12,7 +12,7 @@ const myTodo = (event) =>{
         id : crypto.randomUUID(),
         isCompleted : false,
         isEdited : false,
-        text: todoInput.value,
+        text: todoValue,
     }
 
     localStorages.push(todos);
