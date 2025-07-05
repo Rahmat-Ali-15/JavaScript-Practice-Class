@@ -1,7 +1,8 @@
 let localStorages = JSON.parse(localStorage.getItem("todoData")) || [];
 
 const myTodo = (event) =>{
-    let todoValue = event.target.value;
+    let todoInput = document.getElementById("todoInput");
+    let todoValue = todoInput.value;
 
     if(todoValue === ""){
         alert("please add the task");
@@ -9,23 +10,27 @@ const myTodo = (event) =>{
     }
 
     let todos = {
-        id : crypto.randomUUID(),
+        // id : crypto.randomUUID(),
+        id : Date.now(),
+        text: todoValue,
         isCompleted : false,
         isEdited : false,
-        text: todoValue,
     }
 
     localStorages.push(todos);
     localStorage.setItem("todoData", JSON.stringify(localStorages));
-    event.target.value = ""
+    appenData();
+    event.target.value = "";
 
 }
 
 const appenData = () =>{
     const mainDiv = document.querySelector(".infoTodo");
-
+    
     localStorages.map((e)=>{
-        let civ = document.createElement("div");
+        let div = document.createElement("div");
+        div.classList.add("inputData_container");
+
         let checkBox = document.createElement("input");
         checkBox.type = "checkbox";
         checkBox.name = "checkBoxTodo";
@@ -40,6 +45,9 @@ const appenData = () =>{
         let delete_btn = document.createElement("button");
         edit_btn.innerText = "Edit";
         delete_btn.innerText = "Delete";
+
+        edit_btn.classList.add("edit_btn");
+        delete_btn.classList.add("delete_btn");
 
         div.append(checkBox,id,para,edit_btn,delete_btn);
         mainDiv.append(div);
