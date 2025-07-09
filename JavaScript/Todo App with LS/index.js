@@ -26,6 +26,7 @@ const myTodo = (event) =>{
 
 const appenData = () =>{
     const mainDiv = document.querySelector(".infoTodo");
+    mainDiv.innerHTML = "";
     
     localStorages.map((e)=>{
         let div = document.createElement("div");
@@ -48,6 +49,29 @@ const appenData = () =>{
 
         edit_btn.classList.add("edit_btn");
         delete_btn.classList.add("delete_btn");
+
+
+
+        // functionality of delete button
+
+        delete_btn.addEventListener("click", function(){
+            let deleteItem = localStorages.filter((lm)=>e.id != lm.id);
+            localStorages = deleteItem;
+            localStorage.setItem("todoData", JSON.stringify(localStorages));
+            appenData();
+        });
+        
+
+        // functionality of edit button
+
+        edit_btn.addEventListener("click", function(){
+            let editItem = localStorages.filter((ln)=>e.id != ln.id);
+            localStorages = editItem;
+            localStorage.setItem("todoData", JSON.stringify(localStorages));
+            appenData();
+        });
+
+
 
         div.append(checkBox,id,para,edit_btn,delete_btn);
         mainDiv.append(div);
