@@ -1,20 +1,20 @@
 let localStorages = JSON.parse(localStorage.getItem("todoData")) || [];
 
-const myTodo = (event) =>{
+const myTodo = (event) => {
     let todoInput = document.getElementById("todoInput");
     let todoValue = todoInput.value;
 
-    if(todoValue === ""){
+    if (todoValue === "") {
         alert("please add the task");
         return;
     }
 
     let todos = {
         // id : crypto.randomUUID(),
-        id : Date.now(),
+        id: Date.now(),
         text: todoValue,
-        isCompleted : false,
-        isEdited : false,
+        isCompleted: false,
+        isEdited: false,
     }
 
     localStorages.push(todos);
@@ -24,11 +24,11 @@ const myTodo = (event) =>{
 
 }
 
-const appenData = () =>{
+const appenData = () => {
     const mainDiv = document.querySelector(".infoTodo");
     mainDiv.innerHTML = "";
-    
-    localStorages.map((e)=>{
+
+    localStorages.map((e) => {
         let div = document.createElement("div");
         div.classList.add("inputData_container");
 
@@ -38,6 +38,10 @@ const appenData = () =>{
 
         let id = document.createElement("p");
         let para = document.createElement("p");
+
+        let editInput = document.createElement("input");
+        editInput.classList.add("editInput");
+        editInput.value = e.text
 
         id.innerText = e.id;
         para.innerText = e.text;
@@ -54,26 +58,37 @@ const appenData = () =>{
 
         // functionality of delete button
 
-        delete_btn.addEventListener("click", function(){
-            let deleteItem = localStorages.filter((lm)=>e.id != lm.id);
+        delete_btn.addEventListener("click", function () {
+            let deleteItem = localStorages.filter((lm) => e.id != lm.id);
             localStorages = deleteItem;
             localStorage.setItem("todoData", JSON.stringify(localStorages));
             appenData();
         });
-        
+
 
         // functionality of edit button
 
-        edit_btn.addEventListener("click", function(){
-            let editItem = localStorages.filter((ln)=>e.id != ln.id);
+        edit_btn.addEventListener("click", function () {
+            let editItem = localStorages.map((ln) => {
+                if (e.id === ln.id) {
+                    return { ...ln, isEdited: !ln.isEdited };
+                }
+                return ln
+            });
             localStorages = editItem;
             localStorage.setItem("todoData", JSON.stringify(localStorages));
+            console.log(editItem);
             appenData();
         });
 
+        (e.isEdited === true) ? para.style.display = 'none' : para.style.display = 'block';
+        (e.isEdited === true) ? editInput.style.display = 'block' : editInput.style.display = 'none';
 
 
-        div.append(checkBox,id,para,edit_btn,delete_btn);
+        console.log(localStorages, "this is ls")
+
+
+        div.append(checkBox, id, editInput, para, edit_btn, delete_btn);
         mainDiv.append(div);
     })
 
