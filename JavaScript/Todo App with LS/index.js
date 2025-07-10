@@ -55,6 +55,12 @@ const appenData = () => {
         delete_btn.classList.add("delete_btn");
 
 
+        let cancelBtn = document.createElement("button");
+        cancelBtn.innerText = "Cancel"
+        let confirmBtn = document.createElement("button");
+        confirmBtn.innerText = "Confirm"
+
+
 
         // functionality of delete button
 
@@ -73,7 +79,7 @@ const appenData = () => {
                 if (e.id === ln.id) {
                     return { ...ln, isEdited: !ln.isEdited };
                 }
-                return ln
+                return ln;
             });
             localStorages = editItem;
             localStorage.setItem("todoData", JSON.stringify(localStorages));
@@ -82,13 +88,14 @@ const appenData = () => {
         });
 
         (e.isEdited === true) ? para.style.display = 'none' : para.style.display = 'block';
+        (e.isEdited === true) ? edit_btn.style.display = 'none' : cancelBtn.style.display = 'block';
         (e.isEdited === true) ? editInput.style.display = 'block' : editInput.style.display = 'none';
 
 
-        console.log(localStorages, "this is ls")
+        console.log(localStorages, "this is ls");
 
 
-        div.append(checkBox, id, editInput, para, edit_btn, delete_btn);
+        div.append(checkBox, id, editInput, para, edit_btn,cancelBtn,confirmBtn, delete_btn);
         mainDiv.append(div);
     })
 
