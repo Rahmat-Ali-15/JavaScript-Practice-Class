@@ -25,13 +25,23 @@
 
 /* Js */
 .inputData_container{
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 70px;
+    gap: 120px;
+    /* border: 1px solid red; */
 }
 .edit_btn,.delete_btn{
     padding: 8px;
     border-radius: 10px;
+}
+.infoTodo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid red;
+    gap: 50px;
 }
 
