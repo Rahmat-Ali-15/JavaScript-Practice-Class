@@ -57,8 +57,12 @@ const appenData = () => {
 
         let cancelBtn = document.createElement("button");
         cancelBtn.innerText = "Cancel"
+        
         let confirmBtn = document.createElement("button");
         confirmBtn.innerText = "Confirm"
+        // confirmBtn.style.display = "none";
+        // cancelBtn.style.display = "none";
+        // cancelBtn.style.display = "none";
 
 
 
@@ -87,16 +91,70 @@ const appenData = () => {
             appenData();
         });
 
-        (e.isEdited === true) ? para.style.display = 'none' : para.style.display = 'block';
-        (e.isEdited === true) ? edit_btn.style.display = 'none' : cancelBtn.style.display = 'block';
-        (e.isEdited === true) ? editInput.style.display = 'block' : editInput.style.display = 'none';
+        // (e.isEdited === true) ? para.style.display = 'none' : para.style.display = 'block';
+        // (e.isEdited === true) ? edit_btn.style.display = 'none' : cancelBtn.style.display = 'block';
+        // (e.isEdited === true) ? editInput.style.display = 'block' : editInput.style.display = 'none';
+
+        
+
+        // console.log(localStorages, "this is ls");
 
 
-        console.log(localStorages, "this is ls");
+        // div.append(checkBox, id, editInput, para, edit_btn,cancelBtn,confirmBtn, delete_btn);
+        // mainDiv.append(div);
 
 
-        div.append(checkBox, id, editInput, para, edit_btn,cancelBtn,confirmBtn, delete_btn);
+
+        // Confirm button
+        confirmBtn.addEventListener("click", function () {
+            let updatedInput = localStorages.map((item) => {
+                if (item.id === e.id) {
+                    return {
+                        ...item,
+                        text: editInput.value,
+                        isEdited: false,
+                    };
+                }
+                return item;
+            });
+            localStorages = updatedInput;
+            localStorage.setItem("todoData", JSON.stringify(localStorages));
+            appenData();
+        });
+
+        // Cancel button
+        cancelBtn.addEventListener("click", function () {
+            let cancelInput = localStorages.map((item) => {
+                if (item.id === e.id) {
+                    return {
+                        ...item,
+                        isEdited: false,
+                    };
+                }
+                return item;
+            });
+            localStorages = cancelInput;
+            localStorage.setItem("todoData", JSON.stringify(localStorages));
+            appenData();
+        });
+
+        if (e.isEdited) {
+            para.style.display = "none";
+            edit_btn.style.display = "none";
+            editInput.style.display = "inline-block";
+            cancelBtn.style.display = "inline-block";
+            confirmBtn.style.display = "inline-block";
+        } else {
+            para.style.display = "block";
+            edit_btn.style.display = "inline-block";
+            editInput.style.display = "none";
+            cancelBtn.style.display = "none";
+            confirmBtn.style.display = "none";
+        }
+
+        div.append(checkBox, id, editInput, para, edit_btn, cancelBtn, confirmBtn, delete_btn);
         mainDiv.append(div);
+    
     })
 
 }
