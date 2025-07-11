@@ -30,7 +30,6 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 120px;
-    /* border: 1px solid red; */
 }
 .edit_btn,.delete_btn{
     padding: 8px;
