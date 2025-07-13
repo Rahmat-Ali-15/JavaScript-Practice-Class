@@ -12,7 +12,7 @@ body{
     align-items: center;
     background-color: black;
 }
-.container{
+.parent_container{
     width: 50%;
     padding: 20px 40px;
     display: flex;
@@ -20,7 +20,7 @@ body{
     align-items: center;
     background-color: #f2e8ce;
 }
-.todo_app{
+.todo_container{
     width: 100%;
     padding: 30px;
     color: #dcd4b5;
@@ -28,7 +28,7 @@ body{
     border: none;
     border-radius: 10px;
 }
-.todo_app>h1{
+.todo_container>h1{
     font-size: 36px;
     font-weight: 400;
     margin-bottom: 30px;
@@ -55,36 +55,36 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
-.list_container{
+.todoDetails{
     margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    display: none;
 }
-.list_container li{
-    list-style-type: none;
-    color: white;
-    font-size: 26px;
+
+.todoDetails_container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid #ac7424;
-    padding: 10px 15px;
-    border-radius: 15px;
 }
-.btn_container{
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    
-}
-.btn_container button{
-    background-color: transparent;
+.edit_btn,.delete_btn{
+    width: 60px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(148, 119, 119);
     border: none;
-    color: red;
-    font-size: 19px;
+    border-radius: 8px;
     cursor: pointer;
+}
+.delete_btn{
+    background-color: rgb(133, 19, 19);
+}
+.id{
+    width: 120px;
+    text-align: center;
+}
+.inputText{
+    width: 200px;
+    text-align: center;
 }
