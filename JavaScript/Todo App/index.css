@@ -67,18 +67,19 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.edit_btn,.delete_btn{
-    width: 60px;
+.edit_btn,.delete_btn,.cancelBtn,.confirmBtn{
+    width: 70px;
     padding: 10px;
     font-size: 16px;
-    color: white;
-    background-color: rgb(148, 119, 119);
+    color: #ffffff;
+    background-color: #21b77f;
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 .delete_btn{
-    background-color: rgb(133, 19, 19);
+    background-color: #b02541;
+    color: #dcd4b5;
 }
 .id{
     width: 120px;
@@ -87,4 +88,18 @@ body{
 .inputText{
     width: 200px;
     text-align: center;
+}
+.editInput{
+    width: 200px;
+    font-size: 16px;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #e8f8eb;
+    background-color: #db963b;
+}
+.cancelBtn{
+    background-color: #b02541;
+    color: #dcd4b5;
 }
