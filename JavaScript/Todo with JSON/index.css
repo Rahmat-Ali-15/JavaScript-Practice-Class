@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.parent_container{
+    width: 50%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2e8ce;
+}
+.todo_container{
+    width: 100%;
+    padding: 30px;
+    color: #dcd4b5;
+    background-color: #162619;
+    border: none;
+    border-radius: 10px;
+}
+.todo_container>h1{
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.todo_content{
+    display: flex;
+    gap: 10px;
+}
+.todo_content input{
+    width: 90%;
+    font-size: 22px;
+    padding: 12px;
+    border: 1px solid #b8b9a1;
+    border-radius: 10px;
+    background-color: #162619;
+    color: #ffffff;
+}
+.todo_content button{
+    font-size: 19px;
+    padding: 12px;
+    border: 1px solid #b8b9a1;
+    background-color: #162619;
+    color: #dcd4b5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.todoDetails{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.delete_modal_container{
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+}
+
+/* CSS for Js class */
+
+.todoDetails_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit_btn,.delete_btn,.cancelBtn,.confirmBtn{
+    width: 70px;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #21b77f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.delete_btn{
+    background-color: #b02541;
+    color: #dcd4b5;
+}
+.id{
+    width: 120px;
+    text-align: center;
+}
+.inputText{
+    width: 200px;
+    text-align: center;
+}
+.editInput{
+    width: 200px;
+    font-size: 16px;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: #e8f8eb;
+    background-color: #db963b;
+}
+.cancelBtn{
+    background-color: #b02541;
+    color: #dcd4b5;
+}
