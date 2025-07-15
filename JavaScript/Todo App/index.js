@@ -20,10 +20,11 @@ const myTodo = (event) => {
     localStorage.setItem("todoDatas",JSON.stringify(arrStorage));
     appenData();
     todoInput.value = "";
-
+    
 }
 
 const appenData = () => {
+    let parentContainer = document.querySelector(".parent_container")  
     const mainDiv = document.querySelector(".todoDetails");
     mainDiv.innerHTML = "";
 
@@ -57,8 +58,7 @@ const appenData = () => {
         editInput.value = e.text;
 
         
-        
-        // Functionality of Edit button
+/* <- ================= Functionality of Edit button ================== -> */ 
         
         editBtn.addEventListener("click", function() {
             let editItem = arrStorage.map((el) =>{
@@ -71,19 +71,43 @@ const appenData = () => {
             localStorage.setItem("todoDatas",JSON.stringify(arrStorage));
             appenData();
         });
+        
+        
+/* <- ================= Functionality of Delete button & Modal ================== -> */ 
+        
+        let modalContainer = document.querySelector(".delete_modal_container");
+        let yesBtn = document.querySelector(".yes_btn");      
+        let noBtn = document.querySelector(".no_btn");
 
-        
-        // Functionality of Delete button
-        
-        deleteBtn.addEventListener("click", function() {
-            let deleteItem = arrStorage.filter((dl) => e.id != dl.id );
-            arrStorage = deleteItem;
-            localStorage.setItem("todoDatas", JSON.stringify(arrStorage));
-            appenData();
-        });
+        let currentDeleteId = null;
+
+         deleteBtn.addEventListener("click", function openModal(){
+            currentDeleteId = e.id; // store the id of the item that we want to delete
+            modalContainer.classList.add("showModal");
+            parentContainer.classList.add("parent_disabled");
+
+        })
+
+        yesBtn.addEventListener("click", function() {
+            if (currentDeleteId !== null) {
+                let deleteItem = arrStorage.filter((dl) => e.id != dl.id );
+                arrStorage = deleteItem;
+                localStorage.setItem("todoDatas", JSON.stringify(arrStorage));
+                appenData();
+                modalContainer.classList.remove("showModal");
+                parentContainer.classList.remove("parent_disabled");
+                currentDeleteId = null;
+            } 
+        });  
+
+        noBtn.addEventListener("click", function closeModal(){
+            modalContainer.classList.remove("showModal");
+            parentContainer.classList.remove("parent_disabled");
+            currentDeleteId = null;
+        })
         
 
-        // this is for when I click on the edit button then edit button will not display instead of edit button cancel & confirm button will display
+// this is for when I click on the edit button then edit button will not display instead of edit button cancel & confirm button will display
 
         let cancelBtn = document.createElement("button");
         let confirmBtn = document.createElement("button");
@@ -94,7 +118,7 @@ const appenData = () => {
         confirmBtn.classList.add("confirmBtn");
 
 
-        // Functionality of Cancel button
+/* <- ================= Functionality of Cancel button ================== -> */ 
 
         cancelBtn.addEventListener("click", function() {
             let cancelItem = arrStorage.map((cl) =>{
@@ -112,7 +136,7 @@ const appenData = () => {
         })
 
 
-        // Functionality of Confirm button
+/* <- ================= Functionality of Confirm button ================== -> */ 
 
         confirmBtn.addEventListener("click", function() {
             let confirmItem = arrStorage.map((c) =>{
@@ -131,7 +155,7 @@ const appenData = () => {
         })
 
 
-        // Functionality of Checkbox
+/* <- ================= Functionality of Checkbox ================== -> */ 
 
         checkBox.addEventListener("change", function() {
             let checkBoxItem = arrStorage.map((ch) => {
@@ -182,6 +206,8 @@ const appenData = () => {
             deleteBtn.style.textDecoration = "none";
             id.style.textDecoration = "none";
         }
+
+/* <- ================= Appending data on the UI ================== -> */ 
 
         div.append(checkBox,id,inputText,editInput,editBtn,cancelBtn,deleteBtn,confirmBtn);
         mainDiv.append(div);
