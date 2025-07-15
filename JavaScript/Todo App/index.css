@@ -62,11 +62,6 @@ body{
     gap: 20px;
 }
 
-.delete_modal_container{
-    width: 300px;
-    height: 100px;
-    background-color: #fff;
-}
 
 /* CSS for Js class */
 
@@ -110,4 +105,67 @@ body{
 .cancelBtn{
     background-color: #b02541;
     color: #dcd4b5;
+}
+
+/* modal start */
+
+.delete_modal_container{
+    position: absolute;
+    width: 320px;
+    height: 140px;
+    padding: 15px 10px;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    flex-direction: column;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 0.6s ease-in-out;
+}
+.modal_para,.modal_btn_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.modal_para p{
+    font-size: 18px;
+}
+#para_2{
+    font-weight: 550;
+}
+.modal_btn_container{
+    flex-direction: row;
+    gap: 40px;
+    align-items: end;
+}
+.yes_btn,.no_btn{
+    width: 50px;
+    padding: 7px;
+    border: none;
+    border-radius: 8px;
+    color: #e8f8eb;
+    background-color: #21b77f;
+    cursor: pointer;
+}
+.no_btn{
+    background-color: #b02541;
+}
+
+.showModal{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 999;
+}
+.parent_disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
