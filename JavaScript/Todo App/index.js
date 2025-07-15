@@ -33,6 +33,7 @@ const appenData = () => {
 
         let checkBox = document.createElement("input");
         checkBox.type = "checkbox";
+        checkBox.style.cursor = "pointer";
         checkBox.checked = e.isCompleted;
 
         let id = document.createElement("p");
@@ -173,6 +174,7 @@ const appenData = () => {
             deleteBtn.style.textDecoration = "line-through";
             id.style.textDecoration = "line-through";
             editBtn.disabled = true;
+            editBtn.style.cursor = "not-allowed";
         }
         else{
             inputText.style.textDecoration = "none";
