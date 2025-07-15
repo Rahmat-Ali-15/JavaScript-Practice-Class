@@ -111,3 +111,58 @@ body{
     background-color: #b02541;
     color: #dcd4b5;
 }
+
+/* Modal started */
+
+.delete_modal_container{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 0.6s ease-in-out;
+}
+.delete_modal_container p{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal_btn_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.yes_btn,.no_btn{
+    width: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #e8f8eb;
+    background-color: #21b77f;
+}
+.no_btn{
+    background-color: #b02541;
+}
+
+.showModal{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 999;
+}
+.parent_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
