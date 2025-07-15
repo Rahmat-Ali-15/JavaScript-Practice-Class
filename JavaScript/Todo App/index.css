@@ -62,6 +62,14 @@ body{
     gap: 20px;
 }
 
+.delete_modal_container{
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+}
+
+/* CSS for Js class */
+
 .todoDetails_container{
     display: flex;
     justify-content: space-between;
