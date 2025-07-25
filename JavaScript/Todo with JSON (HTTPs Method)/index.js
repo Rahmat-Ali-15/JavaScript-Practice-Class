@@ -3,7 +3,7 @@ const todoApi = `https://api-server-zecj.onrender.com/todo`;
 const myTodo = async () => {
     let arr = [];
     let inputBox = document.querySelector(".input_box");
-    let inputValue = inputBox.value;
+    let inputValue = inputBox.value.trim();
     
     if (inputValue.trim() === "") {
         alert("Please Add Some Task.");

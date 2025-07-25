@@ -2,170 +2,44 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
 }
-body{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
-.parent_container{
-    width: 50%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2e8ce;
-}
-.todo_container{
-    width: 100%;
-    padding: 30px;
-    color: #dcd4b5;
-    background-color: #162619;
-    border: none;
-    border-radius: 10px;
-}
-.todo_container>h1{
-    font-size: 36px;
-    font-weight: 400;
-    margin-bottom: 30px;
-}
-.todo_content{
-    display: flex;
-    gap: 10px;
-}
-.todo_content input{
-    width: 90%;
-    font-size: 22px;
-    padding: 12px;
-    border: 1px solid #b8b9a1;
-    border-radius: 10px;
-    background-color: #162619;
-    color: #ffffff;
-}
-.todo_content button{
-    font-size: 19px;
-    padding: 12px;
-    border: 1px solid #b8b9a1;
-    background-color: #162619;
-    color: #dcd4b5;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.todoDetails{
-    margin-top: 60px;
+.main_container{
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    margin-top: 20px;
 }
-
-
-/* CSS for Js class */
-
-.todoDetails_container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.edit_btn,.delete_btn,.cancelBtn,.confirmBtn{
-    width: 70px;
+#todoInput{
     padding: 10px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #21b77f;
-    border: none;
+    width: 400px;
     border-radius: 8px;
-    cursor: pointer;
-}
-.delete_btn{
-    background-color: #b02541;
-    color: #dcd4b5;
-}
-.id{
-    width: 120px;
-    text-align: center;
-}
-.inputText{
-    width: 200px;
-    text-align: center;
-}
-.editInput{
-    width: 200px;
-    font-size: 16px;
-    padding: 8px 10px;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    color: #e8f8eb;
-    background-color: #db963b;
-}
-.cancelBtn{
-    background-color: #b02541;
-    color: #dcd4b5;
-}
-
-/* modal start */
-
-.delete_modal_container{
-    position: absolute;
-    width: 320px;
-    height: 140px;
-    padding: 15px 10px;
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
-    flex-direction: column;
-    background-color: #fff;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    opacity: 0;
-    transform: scale(0.5);
-    pointer-events: none;
-    border-radius: 10px;
-    z-index: -1;
-    transition: all 0.6s ease-in-out;
-}
-.modal_para,.modal_btn_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-.modal_para p{
     font-size: 18px;
 }
-#para_2{
-    font-weight: 550;
-}
-.modal_btn_container{
-    flex-direction: row;
-    gap: 40px;
-    align-items: end;
-}
-.yes_btn,.no_btn{
-    width: 50px;
-    padding: 7px;
-    border: none;
+.btn{
+    padding: 10px;
     border-radius: 8px;
-    color: #e8f8eb;
-    background-color: #21b77f;
-    cursor: pointer;
-}
-.no_btn{
-    background-color: #b02541;
+    font-size: 18px;
 }
 
-.showModal{
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-    z-index: 999;
+/* Js */
+.inputData_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 120px;
 }
-.parent_disabled {
-  pointer-events: none;
-  opacity: 0.5;
+.edit_btn,.delete_btn{
+    padding: 8px;
+    border-radius: 10px;
 }
+.infoTodo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+

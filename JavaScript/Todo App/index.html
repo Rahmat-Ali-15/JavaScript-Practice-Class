@@ -3,33 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud Todos</title>
+    <title>Todo App with Local Storage</title>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js" defer></script>
-
 </head>
-<body>
-    <div class="parent_container">
-        <div class="todo_container">
-            <h1>Create your Todo-List</h1>
-            <div class="todo_content">
-                <input type="text" class="input_box" placeholder="What are your task for today?" onchange="myTodo(event)">
-                <button type="button" onclick="myTodo()">Add</button>
-            </div>
-            <div class="todoDetails"></div>
+<body onload="appenData()">
+    <div class="main_container">
+        <div class="container">
+            <input type="text" name="todo" id="todoInput" placeholder="Add task" onchange="myTodo(event)">
+            <button class="btn" onclick="myTodo()">Add task</button>
         </div>
+        <div class="infoTodo"></div>
     </div>
-
-    <div class="delete_modal_container">
-        <div class="modal_para">
-            <p>Your data will be permanently deleted!</p>
-            <p id="para_2">Do you really want to delete this?</p>
-        </div>
-        <div class="modal_btn_container">
-            <button class="yes_btn">Yes</button>
-            <button class="no_btn">No</button>
-        </div>
-    </div>
-
 </body>
 </html>
