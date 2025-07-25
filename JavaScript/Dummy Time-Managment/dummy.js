@@ -1,0 +1,135 @@
+export const navbar = () => {
+  return `
+        <nav class="navbar-container">
+            <div class="logo">
+            <img src="./Utilities/Time_Management_Logo.sv" alt="Logo">
+        </div>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                    <li><a href="./totd.html">TOTD</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="profile">
+                <p>Profile</p>
+            </div>
+        </nav>
+    `
+}
+
+export const style = () => {
+  return `
+        @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
+        }
+        body {
+          width: 100%;
+          height: 100vh;
+        }
+        header {
+          width: 100%;
+          height: 110px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          transition: all 0.4s ease;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .fixed-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 999;
+          height: 70px;
+        }
+        .navbar-container {
+          width: 85%;
+          height: 60px;
+          padding: 0 40px;
+          display: flex;
+          align-items: center;
+          color: #ffffff;
+          border-radius: 30px;
+          background-color: #1f2937;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          transition: all 0.4s ease;
+        }
+        .navbar-container.fixed {
+          position: fixed;
+          width: 100%;
+          z-index: 999;
+          border-radius: 0;
+        }
+        .navbar-container .logo {
+          width: 30%;
+          height: fit-content;
+          margin: 0 auto;
+        }
+        .navbar-container .logo img {
+          width: 30%;
+        }
+        .nav-list {
+          width: 55%;
+        }
+        .nav-list ul {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        .nav-list ul li {
+          list-style-type: none;
+          text-transform: uppercase;
+          font-weight: 480;
+          
+        }
+        .nav-list ul li a {
+          list-style-type: none;
+          text-decoration: none;
+          color: #ffffff;
+        }
+        .profile {
+          width: 25%;
+          text-align: right;
+          text-transform: uppercase;
+          font-weight: 480;
+        }
+
+        /* scroll button start */
+        .fa-angle-up{
+            position: fixed;
+            top: 80%;
+            left: 96%;
+            padding: 6px 7px;
+            font-size: 32px;
+            background-color: #a24388;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .showScrollBtn{
+            opacity: 1;
+            pointer-events: auto;
+            transition: background-color 0.4s ease;
+        }
+        .showScrollBtn:hover{
+            background-color: #ffcc25;
+        }
+
+        /* scroll button end */
+
+    `
+}
+
