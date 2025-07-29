@@ -15,3 +15,5 @@ let ans = justFunction();
 let newAns = ans()
 
 console.log(newAns());
+
+// clouser end
