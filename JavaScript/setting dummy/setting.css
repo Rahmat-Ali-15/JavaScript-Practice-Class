@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    background-color: #F9FBFC;
+}
+.setting-icon{
+    font-size: 22px;
+}
+.setting-icon i{
+    margin-right: 5px;
+}
+.setting-container{
+    width: 350px;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color:  #F9FBFC;
+}
+.setting-content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.account-setting,.theme,.notisfication{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.account-setting div, 
+.theme div,
+.notisfication div,
+.privacy,
+.appearance div,
+.help_support,
+.about{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+.account-setting>div, 
+.theme>div,
+.notisfication>div,
+.privacy,
+.appearance div,
+.help_support,
+.about{
+    background-color: #29A3E0;
+}
+h3{
+    color: white;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+}
+.fa-angle-right{
+    color: white;
+    margin-right: 10px;
+}
+.fa-toggle-off{
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.setting-container ul li a{
+    text-decoration: none;
+}
+.account-setting ul li,
+.theme ul li,
+.notisfication ul li{
+    list-style-type: none;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.theme ul,
+.notisfication ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fa-moon,.fa-user,.fa-bell,.fa-lock,.fa-eye,.fa-headphones,.fa-circle-question{
+    color: #EEF3F7;
+    margin-right: 5px;
+    font-size: 20px;
+}
