@@ -12,12 +12,10 @@ body{
     gap: 30px;
     background-color: #F9FBFC;
 }
-.setting-icon{
-    font-size: 22px;
-}
-.setting-icon i{
-    margin-right: 5px;
-}
+
+
+/* <============ setting start =============> */
+
 .setting-container{
     width: 350px;
     min-height: 100vh;
@@ -28,19 +26,36 @@ body{
     gap: 30px;
     background-color:  #F9FBFC;
 }
+.setting-container ul li a{
+    text-decoration: none;
+    color: #29A3E0;
+}
+
+/* setting icon & heading start */
+.setting-icon{
+    font-size: 22px;
+}
+.setting-icon i{
+    margin-right: 5px;
+}
+/* setting icon & heading end */
+
+
 .setting-content{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
-.account-setting,.theme,.notisfication{
+.account-setting,
+.theme,
+.notification{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .account-setting div, 
 .theme div,
-.notisfication div,
+.notification div,
 .privacy,
 .appearance div,
 .help_support,
@@ -49,16 +64,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 8px;
-}
-.account-setting>div, 
-.theme>div,
-.notisfication>div,
-.privacy,
-.appearance div,
-.help_support,
-.about{
     background-color: #29A3E0;
 }
 h3{
@@ -68,34 +75,122 @@ h3{
     font-size: 18px;
     font-weight: 400;
     border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
-.fa-angle-right{
+.account-setting ul li,
+.theme ul li,
+.notification ul li{
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.theme ul li,
+.notification ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon,
+.fa-user,
+.fa-bell,
+.fa-lock,
+.fa-eye,
+.fa-headphones,
+.fa-circle-question{
+    color: #EEF3F7;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+/* account-setting start */
+
+.account-parent{
+    cursor: pointer;
+}
+.fa-angle-right,
+.fa-angle-down{
     color: white;
     margin-right: 10px;
 }
+.fa-angle-down{
+    display: none;
+}
+.account-content{
+    max-height: 0;
+    z-index: -1;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.account-setting ul li{
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+    background-color: #D4EBF7;
+}
+.account-setting ul li .fa-angle-right{
+    color: #29A3E0;
+}
+
+/* account-setting end */
+
+
+/* theme setting start */
+
+.theme-content{
+    max-height: 0;
+    z-index: -1;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+.theme-content li,
+.notifi-content li{
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #D4EBF7;
+}
+
+/* theme setting end */
+
+
+/* notification setting start */
+
+.notifi-content{
+    max-height: 0;
+    z-index: -1;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+/* notification setting end */
+
+
 .fa-toggle-off{
     font-size: 22px;
     margin-right: 10px;
 }
 
-.setting-container ul li a{
-    text-decoration: none;
+
+/* <=========== Setting end ===========> */
+
+/* CSS for JS classes start */
+
+.open-account-content{
+    max-height: 115px;
+    z-index: 999;
 }
-.account-setting ul li,
-.theme ul li,
-.notisfication ul li{
-    list-style-type: none;
-    margin-left: 10px;
-    margin-bottom: 5px;
+.open-theme-content{
+    max-height: 100px;
+    z-index: 999;
 }
-.theme ul,
-.notisfication ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.fa-moon,.fa-user,.fa-bell,.fa-lock,.fa-eye,.fa-headphones,.fa-circle-question{
-    color: #EEF3F7;
-    margin-right: 5px;
-    font-size: 20px;
+.open-notifi-content{
+    max-height: 100px;
+    z-index: 999;
 }
