@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dummy Setting Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./setting.css">
+    <script src="./setting.js" defer></script>
 </head>
+
 <body>
-    
+
     <div class="setting-container">
         <div class="setting-icon">
             <i class="fa-solid fa-gear"></i>
@@ -16,46 +19,53 @@
         </div>
         <div class="setting-content">
             <div class="account-setting">
-                <div>
+                <div class="account-parent">
                     <i class="fa-regular fa-user"></i>
                     <h3>Account Settings</h3>
                     <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul>
-                    <div>
-                        <li><a href="#">Edit Profile</a></li>
+                <ul class="account-content">
+                    <li>
+                        <a href="#">Edit Profile</a>
                         <i class="fa-solid fa-angle-right"></i>
-                    </div>
-                    <div>
-                        <li><a href="#">Change Password</a></li>
+                    </li>
+                    <li>
+                        <a href="#">Change Password</a>
                         <i class="fa-solid fa-angle-right"></i>
-                    </div>
-                    <div>
-                        <li><a href="#">Two-Factor Authentication</a></li>
+                    </li>
+                    <li>
+                        <a href="#">Two-Factor Authentication</a>
                         <i class="fa-solid fa-angle-right"></i>
-                    </div>
+                    </li>
                 </ul>
             </div>
             <div class="theme">
-                <div>
+                <div class="theme-parent">
                     <i class="fa-solid fa-moon"></i>
                     <h3>Theme Setting</h3>
                     <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul>
-                    <li><a href="#">Dark Mode</a></li>
-                    <i class="fa-solid fa-toggle-off"></i>
+                <ul class="theme-content">
+                    <li>
+                        <a href="#">Dark Mode</a>
+                        <i class="fa-solid fa-toggle-off"></i>
+                    </li>
                 </ul>
             </div>
-            <div class="notisfication">
-                <div>
+            <div class="notification">
+                <div class="noticefi-parent">
                     <i class="fa-regular fa-bell"></i>
-                    <h3>Notisfication</h3>
+                    <h3>Notification</h3>
                     <i class="fa-solid fa-angle-right"></i>
+                    <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul>
-                    <li><a href="#">Push Notisfication</a></li>
-                    <i class="fa-solid fa-toggle-off"></i>
+                <ul class="notifi-content">
+                    <li>
+                        <a href="#">Push Notification</a>
+                        <i class="fa-solid fa-toggle-off"></i>
+                    </li>
                 </ul>
             </div>
             <div class="appearance">
@@ -83,4 +93,5 @@
         </div>
     </div>
 </body>
+
 </html>
