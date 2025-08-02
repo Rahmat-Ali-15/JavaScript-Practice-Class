@@ -229,7 +229,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* display: none; */
 }
 .account-child-head {
   color: black;
