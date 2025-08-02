@@ -43,17 +43,16 @@ body {
   gap: 10px;
 }
 .account-setting,
-.theme,
-.notification {
+.notification,
+.appearance {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .account-setting div,
-.theme div,
 .notification div,
 .privacy,
-.appearance div,
+.appearance .appearance-parent,
 .help_support,
 .about {
   width: 300px;
@@ -64,7 +63,13 @@ body {
   border-radius: 8px;
   background-color: #29a3e0;
 }
-h3 {
+.account-setting div h3,
+.notification div h3,
+.privacy h3,
+.appearance .appearance-parent h3,
+.theme .theme-parent h3,
+.help_support h3,
+.about h3{
   color: white;
   width: 100%;
   padding: 5px;
@@ -90,7 +95,6 @@ h3 {
   align-items: center;
 }
 
-.fa-moon,
 .fa-user,
 .fa-bell,
 .fa-lock,
@@ -141,10 +145,35 @@ h3 {
 
 /* account-setting end */
 
-/* theme setting start */
 
+/* theme setting start */
+.theme{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 8px;
+  display: none;
+}
+.theme-parent{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  background-color: #d4ebf7;
+}
+.theme-parent h3,
+.theme-parent i{
+  color: #29a3e0 !important;
+}
+.theme-parent h3{
+  font-size: 16px !important;
+}
 .theme-content {
   max-height: 0;
+  width: 100%;
   z-index: -1;
   overflow: hidden;
   transition: all 0.2s ease;
@@ -156,6 +185,9 @@ h3 {
   border: none;
   border-radius: 8px;
   background-color: #d4ebf7;
+}
+.theme-content li{
+  background-color: rgb(235, 198, 198);
 }
 
 /* theme setting end */
