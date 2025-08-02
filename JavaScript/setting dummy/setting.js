@@ -99,28 +99,7 @@ changePass.addEventListener("click", () => {
     editProfileContainer.style.display= "none";
 })
 
-// Eye button 
-// const toggleIcons = document.querySelectorAll('i#togglePassword');
 
-// toggleIcons.forEach(icon => {
-//   // Set initial state as eye-slash (for hidden password)
-//   icon.classList.remove("fa-eye");
-//   icon.classList.add("fa-eye-slash");
-
-//   icon.addEventListener('click', () => {
-//     const input = icon.previousElementSibling;
-
-//     if (input && input.type === "password") {
-//       input.type = "text";
-//       icon.classList.remove("fa-eye-slash");
-//       icon.classList.add("fa-eye"); // 👁️ Show when visible
-//     } else if (input) {
-//       input.type = "password";
-//       icon.classList.remove("fa-eye");
-//       icon.classList.add("fa-eye-slash"); // 🙈 Show when hidden
-//     }
-//   });
-// });
 
 
 
