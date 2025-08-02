@@ -4,15 +4,20 @@ let accountContent = document.querySelector(".account-content");
 let accountArrowDown = openAccountSetting.querySelector(".fa-angle-down");
 let accountArrowRight = openAccountSetting.querySelector(".fa-angle-right");
 
+let openNoticeSetting = document.querySelector(".notifi-parent");
+let notifiContent = document.querySelector(".notifi-content");
+let notifiArrowDown = openNoticeSetting.querySelector(".fa-angle-down");
+let notifiArrowRight = openNoticeSetting.querySelector(".fa-angle-right");
+
+let appearanceParent = document.querySelector(".appearance-parent");
+let appearanceArrowDown = appearanceParent.querySelector(".fa-angle-down");
+let appearanceArrowRight = appearanceParent.querySelector(".fa-angle-right");
+
+let themeParent = document.querySelector(".theme")
 let openThemeSetting = document.querySelector(".theme-parent");
 let themeContent = document.querySelector(".theme-content");
 let themeArrowDown = openThemeSetting.querySelector(".fa-angle-down");
 let themeArrowRight = openThemeSetting.querySelector(".fa-angle-right");
-
-let openNoticeSetting = document.querySelector(".noticefi-parent");
-let notifiContent = document.querySelector(".notifi-content");
-let notifiArrowDown = openNoticeSetting.querySelector(".fa-angle-down");
-let notifiArrowRight = openNoticeSetting.querySelector(".fa-angle-right");
 
 let accountSettingChild = document.querySelector(".account-setting-child");
 
@@ -46,6 +51,25 @@ openAccountSetting.addEventListener("click", () => {
         isAccountSettingOpen = false;
     }
 });
+
+// APPEARANCE SETTING
+
+let isAppearance = false;
+
+appearanceParent.addEventListener("click", () => {
+    if(!isAppearance){
+        appearanceArrowDown.style.display = "block";
+        appearanceArrowRight.style.display = "none";
+        themeParent.style.display = "flex";
+        isAppearance = true;
+    }
+    else{
+        appearanceArrowDown.style.display = "none";
+        appearanceArrowRight.style.display = "block";
+        themeParent.style.display = "none";
+        isAppearance = false;
+    }
+})
 
 
 // THEME SETTING
