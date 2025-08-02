@@ -140,7 +140,23 @@ twoFactor.addEventListener("click", () => {
     changePassParent.style.display = "none";
 })
 
+let factorLoginbtn = document.querySelector(".factor-login-btn");
 
+let factorOtpPage = document.querySelector(".two-factor-otp");
+
+factorLoginbtn.addEventListener("click", () => {
+    factorOtpPage.style.display = "flex";
+    factorLogin.style.display = "none";
+})
+
+let factorOtpVerifyBtn = document.querySelector(".otp-verify-btn");
+
+let factorSuccessMsg = document.querySelector(".two-factor-success-msg");
+
+factorOtpVerifyBtn.addEventListener("click", () => {
+    factorSuccessMsg.style.display = "flex";
+    factorOtpPage.style.display = "none";
+})
 
 
 
