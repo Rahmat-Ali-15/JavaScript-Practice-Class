@@ -13,24 +13,30 @@
 <body>
 
     <div class="setting-container">
-        <div class="setting-icon">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
-        </div>
+
         <div class="setting-content">
+
+            <div class="setting-icon">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </div>
+
             <div class="account-setting">
+
                 <div class="account-parent">
                     <i class="fa-regular fa-user"></i>
                     <h3>Account Settings</h3>
                     <i class="fa-solid fa-angle-right"></i>
                     <i class="fa-solid fa-angle-down"></i>
+
                 </div>
+
                 <ul class="account-content">
-                    <li>
+                    <li class="edit-profile">
                         <a href="#">Edit Profile</a>
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
-                    <li>
+                    <li class="change-pass">
                         <a href="#">Change Password</a>
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
@@ -39,58 +45,233 @@
                         <i class="fa-solid fa-angle-right"></i>
                     </li>
                 </ul>
+
             </div>
+
             <div class="theme">
+
                 <div class="theme-parent">
                     <i class="fa-solid fa-moon"></i>
                     <h3>Theme Setting</h3>
                     <i class="fa-solid fa-angle-right"></i>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
+
                 <ul class="theme-content">
                     <li>
                         <a href="#">Dark Mode</a>
                         <i class="fa-solid fa-toggle-off"></i>
                     </li>
                 </ul>
+
             </div>
+
             <div class="notification">
+
                 <div class="noticefi-parent">
                     <i class="fa-regular fa-bell"></i>
                     <h3>Notification</h3>
                     <i class="fa-solid fa-angle-right"></i>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
+
                 <ul class="notifi-content">
                     <li>
                         <a href="#">Push Notification</a>
                         <i class="fa-solid fa-toggle-off"></i>
                     </li>
                 </ul>
+
             </div>
+
             <div class="appearance">
+
                 <div>
                     <i class="fa-regular fa-eye"></i>
                     <h3>Appearance</h3>
                     <i class="fa-solid fa-angle-right"></i>
                 </div>
+
             </div>
+
             <div class="privacy">
                 <i class="fa-solid fa-lock"></i>
                 <h3>Privacy Policy</h3>
                 <i class="fa-solid fa-angle-right"></i>
             </div>
+
             <div class="help_support">
                 <i class="fa-solid fa-headphones"></i>
                 <h3>Help & Support</h3>
                 <i class="fa-solid fa-angle-right"></i>
             </div>
+
             <div class="about">
                 <i class="fa-regular fa-circle-question"></i>
                 <h3>About</h3>
                 <i class="fa-solid fa-angle-right"></i>
             </div>
+
         </div>
+
+        <!-- account setting child start -->
+        <div class="account-setting-child">
+
+            <div class="account-child-head">
+                <p>Public Profile</p>
+            </div>
+
+            <div class="default-profile-details">
+
+                <div class="profile-details">
+
+                    <div class="full-name">
+                        <label for="fullname">Name</label>
+                        <input type="text" name="Full_Name" id="fullname">
+                    </div>
+
+                    <div class="user-email">
+                        <label for="useremail">Email</label>
+                        <input type="email" name="User_Email" id="useremail">
+                    </div>
+
+                    <div class="user-bio">
+                        <label for="bio">Bio</label>
+                        <textarea name="User_Bio" id="bio" style="resize: none;"></textarea>
+                    </div>
+
+                    <div class="user-social-accounts">
+                        <label for="socialaccount">Social Accounts</label>
+                        <input type="text" name="Social_Account_1" id="socialaccount1">
+                        <input type="text" name="Social_Account_2" id="socialaccount2">
+                        <input type="text" name="Social_Account_3" id="socialaccount3">
+                    </div>
+
+                    <div class="user-location">
+                        <label for="user_location">Location</label>
+                        <input type="text" name="User_Location" id="user_location">
+                    </div>
+
+                </div>
+                <div class="profile-picture-container">
+                    <p>Profile Picture</p>
+                    <div class="profile-picture">
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- account setting child end -->
+
+        </div>
+
+        <!-- Edit profile start -->
+
+        <div class="edit-profile-container">
+
+            <div class="edit-details-head">
+                <p>Edit Profile</p>
+            </div>
+
+            <div class="edit-profile-details-parent">
+
+                <div class="edit-profile-details-container">
+
+                    <div class="edit-full-name">
+                        <label for="edit_fullname">Name</label>
+                        <input type="text" name="Full_Name" id="edit_fullname">
+                    </div>
+
+                    <div class="edit-user-email">
+                        <label for="edit_useremail">Email</label>
+                        <input type="email" name="User_Email" id="edit_useremail">
+                    </div>
+
+                    <div class="edit-user-bio">
+                        <label for="edit_bio">Bio</label>
+                        <textarea name="User_Bio" id="edit_bio" style="resize: none;"></textarea>
+                    </div>
+
+                    <div class="edit-user-location">
+                        <label for="edit_user_location">Location</label>
+                        <input type="text" name="User_Location" id="edit_user_location">
+                    </div>
+
+                </div>
+
+                <div class="edit-profile-picture-container">
+                    <p>Profile Picture</p>
+                    <div class="edit-profile-picture">
+
+                    </div>
+                    <input type="file" name="User_Profile" id="profile_picture">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Edit profile end -->
+
+        <!-- Change password start -->
+
+        <div class="change-pass-parent">
+
+            <div class="change-pass-head">
+                <p>Change Password</p>
+            </div>
+
+            <div class="change-pass-content">
+
+                <div class="old-pass">
+                    <label for="old_pass">Old Password</label>
+                    <div>
+                        <input type="password" name="Old_Pass" id="old_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="new-pass">
+                    <label for="new_pass">New Password</label>
+                    <div>
+                        <input type="password" name="New_Pass" id="new_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="pass-indication">
+                    <p>Password must have</p>
+                    <ul>
+                        <li>Minimum characters 8</li>
+                        <li>One uppercase character</li>
+                        <li>One lowercase character</li>
+                        <li>One special character</li>
+                        <li>One number</li>
+                    </ul>
+                </div>
+
+                <div class="confirm-pass">
+                    <label for="confirm_pass">Confirm New Password</label>
+                    <div>
+                        <input type="password" name="Confirm_Pass" id="confirm_pass">
+                        <i class="fa-regular fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="change-pass-btn">
+                    <button type="button">Change Password</button>
+                </div>
+                
+                <div class="forget-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Change password end -->
+
     </div>
 </body>
 
