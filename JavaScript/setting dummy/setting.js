@@ -28,6 +28,9 @@ let editProfileContainer = document.querySelector(".edit-profile-container");
 let changePass = document.querySelector(".change-pass");
 let changePassParent = document.querySelector(".change-pass-parent");
 
+let twoFactor = document.querySelector(".two-factor");
+let factorLogin = document.querySelector(".two-factor-login");
+
 // ACCOUNT SETTING
 
 let isAccountSettingOpen = false;
@@ -48,6 +51,7 @@ openAccountSetting.addEventListener("click", () => {
         accountSettingChild.style.display = "flex";
         editProfileContainer.style.display= "none"
         changePassParent.style.display = "none";
+        factorLogin.style.display = "none";
         isAccountSettingOpen = false;
     }
 });
@@ -114,13 +118,26 @@ editProfileBtn.addEventListener("click", () => {
         accountSettingChild.style.display = "none";
         editProfileContainer.style.display= "flex"
         changePassParent.style.display = "none";
+        factorLogin.style.display = "none";
 });
 
 // Change password
 
 changePass.addEventListener("click", () => {
     changePassParent.style.display = "flex";
+    accountSettingChild.style.display = "none";
     editProfileContainer.style.display= "none";
+    factorLogin.style.display = "none";
+})
+
+
+// Two-Factor Authentication
+
+twoFactor.addEventListener("click", () => {
+    factorLogin.style.display = "flex";
+    accountSettingChild.style.display = "none";
+    editProfileContainer.style.display= "none";
+    changePassParent.style.display = "none";
 })
 
 
