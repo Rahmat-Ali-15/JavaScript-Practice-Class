@@ -22,7 +22,6 @@ body {
   display: flex;
   gap: 30px;
   background-color: #f9fbfc;
-  border: 1px solid red;
 }
 .setting-container ul li a {
   text-decoration: none;
@@ -173,7 +172,7 @@ h3 {
 
 /* <=========== Setting end ===========> */
 
-/* CSS for JS classes start */
+/* <========== CSS for JS classes start ===========> */
 
 .open-account-content {
   max-height: 115px;
@@ -188,7 +187,7 @@ h3 {
   z-index: 999;
 }
 
-/* CSS for JS classes end */
+/* <============= CSS for JS classes end ===========> */
 
 /* account setting child start */
 
@@ -198,6 +197,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* display: none; */
 }
 .account-child-head {
   color: black;
@@ -381,29 +381,29 @@ h3 {
 }
 .old-pass div,
 .new-pass div,
-.confirm-pass div{
-    width: 300px;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    background-color: rgb(79, 117, 144);
-    background-color: white;
+.confirm-pass div {
+  width: 300px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  background-color: rgb(79, 117, 144);
+  background-color: white;
 }
 .old-pass div:focus-within,
 .new-pass div:focus-within,
-.confirm-pass div:focus-within{
-    border: 2px solid green;
+.confirm-pass div:focus-within {
+  border: 2px solid green;
 }
 .old-pass div i,
 .new-pass div i,
-.confirm-pass div i{
-    color: black;
-    font-size: 14px;
-    opacity: 0.7;
+.confirm-pass div i {
+  color: black;
+  font-size: 14px;
+  opacity: 0.7;
 }
 .old-pass label,
 .new-pass label,
@@ -449,7 +449,187 @@ h3 {
   transition: all 0.6s ease;
 }
 .change-pass-btn button:hover {
-    background-color: #3eb5e8;
+  background-color: #3eb5e8;
 }
 
 /* Change password end */
+
+/* Two-Factor Authentication start */
+
+/* Two-Factor login start */
+.two-factor-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.two-factor-login-container {
+  width: 410px;
+  height: 410px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 10px;
+}
+.login-heading h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.login-heading p {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 15px;
+}
+.two-factor-login-container .email,
+.two-factor-login-container .password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.two-factor-login-container .email label,
+.two-factor-login-container .password label {
+  font-size: 18px;
+}
+.two-factor-login-container .email input,
+.two-factor-login-container .password input {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  border-radius: 5px;
+}
+.two-factor-login-container .email input:focus,
+.two-factor-login-container .password input:focus {
+  outline: none;
+}
+.login-btn button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #3eb5e8;
+  color: white;
+  cursor: pointer;
+}
+/* Two-Factor login end */
+
+/* Two-Factor OTP start */
+
+.two-factor-otp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.two-factor-otp-container {
+  min-width: 400px;
+  min-height: 360px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.otp-heading h1 {
+  font-weight: 550;
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+.otp-heading p {
+  opacity: 0.5;
+  font-size: 15px;
+  text-align: center;
+}
+.otp-btn p > a {
+  color: blue;
+}
+.otp-code {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.otp-code label {
+  font-size: 18px;
+}
+.otp-code input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.otp-code input:focus {
+  outline: none;
+}
+.otp-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.otp-btn button {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3eb5e8;
+  color: white;
+  cursor: pointer;
+}
+.otp-btn p {
+  text-align: center;
+}
+
+/* Two-Factor OTP end */
+
+/* Two-Factor success message start */
+
+.two-factor-success-msg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.factor-success-msg-container {
+  max-width: 400px;
+  max-height: 300px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.factor-success-msg-container h2 {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.factor-success-msg-container p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.factor-success-msg-container button {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3eb5e8;
+}
+/* Two-Factor success message end */
+
+/* Two-Factor Authentication end */
