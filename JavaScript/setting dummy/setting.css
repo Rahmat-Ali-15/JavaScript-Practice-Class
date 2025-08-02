@@ -1,96 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-    background-color: #F9FBFC;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  background-color: #f9fbfc;
 }
-
 
 /* <============ setting start =============> */
 
-.setting-container{
-    width: 350px;
-    min-height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    background-color:  #F9FBFC;
+.setting-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 150px;
+  display: flex;
+  gap: 30px;
+  background-color: #f9fbfc;
+  border: 1px solid red;
 }
-.setting-container ul li a{
-    text-decoration: none;
-    color: #29A3E0;
+.setting-container ul li a {
+  text-decoration: none;
+  color: #29a3e0;
 }
 
 /* setting icon & heading start */
-.setting-icon{
-    font-size: 22px;
+.setting-icon {
+  font-size: 22px;
 }
-.setting-icon i{
-    margin-right: 5px;
+.setting-icon i {
+  margin-right: 5px;
 }
 /* setting icon & heading end */
 
-
-.setting-content{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.setting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .account-setting,
 .theme,
-.notification{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.notification {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.account-setting div, 
+.account-setting div,
 .theme div,
 .notification div,
 .privacy,
 .appearance div,
 .help_support,
-.about{
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 8px;
-    background-color: #29A3E0;
+.about {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #29a3e0;
 }
-h3{
-    color: white;
-    width: 100%;
-    padding: 5px;
-    font-size: 18px;
-    font-weight: 400;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    cursor: pointer;
+h3 {
+  color: white;
+  width: 100%;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 .account-setting ul li,
 .theme ul li,
-.notification ul li{
-    list-style-type: none;
-    margin-bottom: 5px;
-    font-size: 15px;
+.notification ul li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  font-size: 15px;
+  cursor: pointer;
 }
 .theme ul li,
-.notification ul li{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.notification ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fa-moon,
@@ -99,98 +97,359 @@ h3{
 .fa-lock,
 .fa-eye,
 .fa-headphones,
-.fa-circle-question{
-    color: #EEF3F7;
-    margin-right: 5px;
-    font-size: 20px;
+.fa-circle-question {
+  color: #eef3f7;
+  margin-right: 5px;
+  font-size: 20px;
+}
+.fa-toggle-off {
+  font-size: 22px;
+  margin-right: 10px;
 }
 
 /* account-setting start */
 
-.account-parent{
-    cursor: pointer;
+.account-parent {
+  cursor: pointer;
 }
 .fa-angle-right,
-.fa-angle-down{
-    color: white;
-    margin-right: 10px;
+.fa-angle-down {
+  color: white;
+  margin-right: 10px;
 }
-.fa-angle-down{
-    display: none;
+.fa-angle-down {
+  display: none;
 }
-.account-content{
-    max-height: 0;
-    z-index: -1;
-    overflow: hidden;
-    transition: all 0.5s ease;
+.account-content {
+  max-height: 0;
+  z-index: -1;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
-.account-setting ul li{
-    width: 100%;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    border-radius: 8px;
-    background-color: #D4EBF7;
+.account-setting ul li {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background-color: #d4ebf7;
 }
-.account-setting ul li .fa-angle-right{
-    color: #29A3E0;
+.account-setting ul li .fa-angle-right {
+  color: #29a3e0;
 }
 
 /* account-setting end */
 
-
 /* theme setting start */
 
-.theme-content{
-    max-height: 0;
-    z-index: -1;
-    overflow: hidden;
-    transition: all 0.2s ease;
+.theme-content {
+  max-height: 0;
+  z-index: -1;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 .theme-content li,
-.notifi-content li{
-    width: 100%;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: #D4EBF7;
+.notifi-content li {
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d4ebf7;
 }
 
 /* theme setting end */
 
-
 /* notification setting start */
 
-.notifi-content{
-    max-height: 0;
-    z-index: -1;
-    overflow: hidden;
-    transition: all 0.2s ease;
+.notifi-content {
+  max-height: 0;
+  z-index: -1;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 /* notification setting end */
-
-
-.fa-toggle-off{
-    font-size: 22px;
-    margin-right: 10px;
-}
-
 
 /* <=========== Setting end ===========> */
 
 /* CSS for JS classes start */
 
-.open-account-content{
-    max-height: 115px;
-    z-index: 999;
+.open-account-content {
+  max-height: 115px;
+  z-index: 999;
 }
-.open-theme-content{
-    max-height: 100px;
-    z-index: 999;
+.open-theme-content {
+  max-height: 100px;
+  z-index: 999;
 }
-.open-notifi-content{
-    max-height: 100px;
-    z-index: 999;
+.open-notifi-content {
+  max-height: 100px;
+  z-index: 999;
 }
+
+/* CSS for JS classes end */
+
+/* account setting child start */
+
+.account-setting-child {
+  width: 100%;
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.account-child-head {
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+.default-profile-details {
+  display: flex;
+}
+.profile-details {
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.full-name,
+.user-email,
+.user-bio,
+.user-social-accounts,
+.user-location {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.full-name label,
+.user-email label,
+.user-bio label,
+.user-social-accounts label,
+.user-location label {
+  font-size: 17px;
+}
+
+.full-name input,
+.user-email input,
+.user-bio textarea,
+.user-social-accounts input,
+.user-location input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(60, 202, 205);
+}
+.full-name input:focus,
+.user-email input:focus,
+.user-bio textarea:focus,
+.user-social-accounts input:focus,
+.user-location input:focus {
+  outline: none;
+}
+
+.profile-picture-container {
+  width: 40%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: rgb(79, 117, 144);
+}
+
+/* account setting child end */
+
+/* edit profile details start */
+
+.edit-profile-container {
+  width: 100%;
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  display: none;
+}
+
+.edit-details-head {
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+.edit-profile-details-parent {
+  display: flex;
+}
+.edit-profile-details-container {
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.edit-full-name,
+.edit-user-email,
+.edit-user-bio,
+.edit-user-location {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.edit-full-name label,
+.edit-user-email label,
+.edit-user-bio label,
+.edit-user-location label {
+  font-size: 17px;
+}
+.edit-full-name input,
+.edit-user-email input,
+.edit-user-bio textarea,
+.edit-user-location input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(60, 202, 205);
+}
+.edit-full-name input:focus,
+.edit-user-email input:focus,
+.edit-user-bio textarea:focus,
+.edit-user-location input:focus {
+  outline: none;
+}
+.edit-profile-picture-container {
+  width: 40%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-profile-picture {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: rgb(79, 117, 144);
+}
+
+/* eidt profile details end */
+
+/* Change password start */
+
+.change-pass-parent {
+  width: 50%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: none;
+}
+.change-pass-head {
+  padding-bottom: 10px;
+  color: black;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+.change-pass-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.old-pass,
+.new-pass,
+.pass-indication,
+.confirm-pass,
+.change-pass-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.old-pass div,
+.new-pass div,
+.confirm-pass div{
+    width: 300px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    background-color: rgb(79, 117, 144);
+    background-color: white;
+}
+.old-pass div:focus-within,
+.new-pass div:focus-within,
+.confirm-pass div:focus-within{
+    border: 2px solid green;
+}
+.old-pass div i,
+.new-pass div i,
+.confirm-pass div i{
+    color: black;
+    font-size: 14px;
+    opacity: 0.7;
+}
+.old-pass label,
+.new-pass label,
+.confirm-pass label,
+.change-pass-btn label {
+  font-size: 18px;
+}
+.old-pass input,
+.new-pass input,
+.confirm-pass input,
+.change-pass-btn input {
+  width: 90%;
+  border: none;
+}
+.old-pass input:focus,
+.new-pass input:focus,
+.confirm-pass input:focus,
+.change-pass-btn input:focus {
+  outline: none;
+}
+.pass-indication p {
+  font-size: 17px;
+  opacity: 0.7;
+}
+.pass-indication ul {
+  padding-left: 25px;
+}
+.pass-indication ul li {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.change-pass-btn {
+  width: 300px;
+}
+.change-pass-btn button {
+  padding: 10px 5px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #a2acb8;
+  transition: all 0.6s ease;
+}
+.change-pass-btn button:hover {
+    background-color: #3eb5e8;
+}
+
+/* Change password end */
