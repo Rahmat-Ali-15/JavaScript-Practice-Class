@@ -229,6 +229,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* display: none; */
 }
 .account-child-head {
   color: black;
@@ -664,3 +665,198 @@ body {
 /* Two-Factor success message end */
 
 /* Two-Factor Authentication end */
+
+/* Privacy policy start */
+
+.privacy-parent-container{
+  max-width: 100%;
+  padding: 20px 20px 20px 50px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.privacy-heading{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.privacy-heading h1{
+  font-weight: 500;
+  font-size: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.privacy-heading p>span{
+  font-weight: 600;
+}
+.privacy-details{
+  max-width: 100%;
+}
+.privacy-details>ol{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.data-info h2,
+.data-info p{
+  margin-bottom: 15px;
+}
+.privacy-details ol h2{
+  font-size: 22px;
+  font-weight: 500;
+}
+.privacy-details ol>li::marker{
+  font-size: 22px;
+  font-weight: 500;
+}
+.data-info ol{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  padding-left: 30px;
+}
+.data-info ol>li::marker{
+  font-size: 17px;
+  font-weight: 550;
+}
+.data-info ol>li>h4{
+  font-weight: 550;
+}
+.data-info ol>li>ul{
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.data-info ol>li>ul>li{
+  list-style: disc;
+}
+
+.use-info h2,
+.use-info p,
+.cookies-tracking h2,
+.sharing-info h2,
+.sharing-info p,
+.data-security h2,
+.rights h2,
+.rights p,
+.rights ul,
+.data-retention h2,
+.child-privacy h2,
+.change-privacy h2,
+.contact-us h2,
+.contact-us p{
+  margin-bottom: 15px;
+}
+.use-info ul,
+.sharing-info ul,
+.rights ul{
+  padding-left: 30px;
+}
+.use-info ul>li,
+.sharing-info ul>li,
+.rights ul>li{
+  list-style: disc;
+}
+
+/* Privacy policy end */
+
+/* Help & Support start */
+
+.help-support-parent{
+  max-width: 100%;
+  padding: 30px;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: none;
+}
+.help-heading{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.help-heading h1{
+  font-size: 30px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.help-heading>h2{
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+}
+.help-heading p>i{
+  font-weight: 600;
+}
+.help-details{
+  padding-left: 20px;
+}
+.help-details ol{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.help-details ol>li>h4{
+  font-size: 22px;
+  font-weight: 450;
+}
+.help-details ol>li::marker{
+  font-size: 22px;
+  font-weight: 450;
+}
+.faq>h4,
+.user-guide>h4,
+.help>h4,
+.feedback>h4{
+  margin-bottom: 10px;
+}
+.faq ul{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 20px;
+}
+.faq>ul>li{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+.faq>ul>li>h4{
+  font-family: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.faq>ul>li>ul{
+  padding-left: 30px;
+}
+.faq>ul>li>ul>li{
+  font-family: 22px;
+  font-weight: 450;
+  list-style: disc;
+}
+.faq>ul>li>ul>li>h6{
+  font-size: 18px;
+  font-weight: 450;
+}
+.faq>ul>li>ul>li>p{
+  font-size: 17px;
+  font-weight: 300;
+}
+.user-guide>ul,
+.help ul,
+.submit-request ul{
+  margin-top: 10px;
+  padding-left: 35px;
+  list-style-type: disc;
+}
+.help>ul>li>address>span{
+  color: rgb(132, 68, 68);
+  font-size: 18px;
+}
+.submit-request ul{
+  margin-bottom: 10px;
+}
+
+/* Help & Support start */
