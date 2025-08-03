@@ -42,6 +42,8 @@ openAccountSetting.addEventListener("click", () => {
         accountArrowRight.style.display = "none";
         accountSettingChild.style.display = "flex";
         editProfileContainer.style.display= "none";
+        privacyContainer.style.display= "none";
+        helpParent.style.display= "none";
         isAccountSettingOpen = true;
     } 
     else {
@@ -52,6 +54,7 @@ openAccountSetting.addEventListener("click", () => {
         editProfileContainer.style.display= "none"
         changePassParent.style.display = "none";
         factorLogin.style.display = "none";
+        helpParent.style.display= "none";
         isAccountSettingOpen = false;
     }
 });
@@ -115,10 +118,12 @@ openNoticeSetting.addEventListener("click", () => {
 // Displaying edit profile by clicking edit profile button
 
 editProfileBtn.addEventListener("click", () => {
-        accountSettingChild.style.display = "none";
-        editProfileContainer.style.display= "flex"
+    editProfileContainer.style.display= "flex"
+    accountSettingChild.style.display = "none";
         changePassParent.style.display = "none";
         factorLogin.style.display = "none";
+        privacyContainer.style.display= "none";
+        helpParent.style.display= "none";
 });
 
 // Change password
@@ -128,6 +133,8 @@ changePass.addEventListener("click", () => {
     accountSettingChild.style.display = "none";
     editProfileContainer.style.display= "none";
     factorLogin.style.display = "none";
+    privacyContainer.style.display= "none";
+    helpParent.style.display= "none";
 })
 
 
@@ -138,6 +145,8 @@ twoFactor.addEventListener("click", () => {
     accountSettingChild.style.display = "none";
     editProfileContainer.style.display= "none";
     changePassParent.style.display = "none";
+    privacyContainer.style.display= "none";
+    helpParent.style.display= "none";
 })
 
 let factorLoginbtn = document.querySelector(".factor-login-btn");
@@ -159,4 +168,33 @@ factorOtpVerifyBtn.addEventListener("click", () => {
 })
 
 
+// Privacy Policy
 
+let privacyBtn = document.querySelector(".privacy");
+
+let privacyContainer = document.querySelector(".privacy-parent-container");
+
+privacyBtn.addEventListener("click", () => {
+    privacyContainer.style.display= "flex";
+    accountSettingChild.style.display = "none";
+    editProfileContainer.style.display= "none";
+    factorLogin.style.display = "none";
+    changePassParent.style.display = "none";
+    helpParent.style.display= "none";
+
+});
+
+// Help & Support
+
+let helpBtn = document.querySelector(".help_support");
+
+let helpParent = document.querySelector(".help-support-parent");
+
+helpBtn.addEventListener("click", () => {
+    helpParent.style.display= "flex";
+    accountSettingChild.style.display = "none";
+    editProfileContainer.style.display= "none";
+    factorLogin.style.display = "none";
+    changePassParent.style.display = "none";
+    privacyContainer.style.display= "none";
+})
