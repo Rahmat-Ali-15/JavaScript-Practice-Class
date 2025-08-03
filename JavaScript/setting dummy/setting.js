@@ -30,6 +30,17 @@ let changePassParent = document.querySelector(".change-pass-parent");
 
 let twoFactor = document.querySelector(".two-factor");
 let factorLogin = document.querySelector(".two-factor-login");
+let factorLoginbtn = document.querySelector(".factor-login-btn");
+let factorOtpPage = document.querySelector(".two-factor-otp");
+let factorOtpVerifyBtn = document.querySelector(".otp-verify-btn");
+let factorSuccessMsg = document.querySelector(".two-factor-success-msg");
+
+let privacyBtn = document.querySelector(".privacy");
+let privacyContainer = document.querySelector(".privacy-parent-container");
+
+let helpBtn = document.querySelector(".help_support");
+let helpParent = document.querySelector(".help-support-parent");
+
 
 // ACCOUNT SETTING
 
@@ -41,9 +52,15 @@ openAccountSetting.addEventListener("click", () => {
         accountArrowDown.style.display = "flex";
         accountArrowRight.style.display = "none";
         accountSettingChild.style.display = "flex";
+
         editProfileContainer.style.display= "none";
-        privacyContainer.style.display= "none";
-        helpParent.style.display= "none";
+        changePassParent.style.display = "none";
+        factorLogin.style.display = "none";
+        factorOtpPage.style.display = "none";
+        factorSuccessMsg.style.display = "none";
+        privacyContainer.style.display = "none";
+        helpParent.style.display = "none";        
+
         isAccountSettingOpen = true;
     } 
     else {
@@ -51,10 +68,15 @@ openAccountSetting.addEventListener("click", () => {
         accountArrowDown.style.display = "none";
         accountArrowRight.style.display = "flex";
         accountSettingChild.style.display = "flex";
-        editProfileContainer.style.display= "none"
+
+        editProfileContainer.style.display= "none";
         changePassParent.style.display = "none";
         factorLogin.style.display = "none";
+        factorOtpPage.style.display = "none";
+        factorSuccessMsg.style.display = "none";
+        privacyContainer.style.display = "none";
         helpParent.style.display= "none";
+
         isAccountSettingOpen = false;
     }
 });
@@ -149,18 +171,10 @@ twoFactor.addEventListener("click", () => {
     helpParent.style.display= "none";
 })
 
-let factorLoginbtn = document.querySelector(".factor-login-btn");
-
-let factorOtpPage = document.querySelector(".two-factor-otp");
-
 factorLoginbtn.addEventListener("click", () => {
     factorOtpPage.style.display = "flex";
     factorLogin.style.display = "none";
 })
-
-let factorOtpVerifyBtn = document.querySelector(".otp-verify-btn");
-
-let factorSuccessMsg = document.querySelector(".two-factor-success-msg");
 
 factorOtpVerifyBtn.addEventListener("click", () => {
     factorSuccessMsg.style.display = "flex";
@@ -169,10 +183,6 @@ factorOtpVerifyBtn.addEventListener("click", () => {
 
 
 // Privacy Policy
-
-let privacyBtn = document.querySelector(".privacy");
-
-let privacyContainer = document.querySelector(".privacy-parent-container");
 
 privacyBtn.addEventListener("click", () => {
     privacyContainer.style.display= "flex";
@@ -185,10 +195,6 @@ privacyBtn.addEventListener("click", () => {
 });
 
 // Help & Support
-
-let helpBtn = document.querySelector(".help_support");
-
-let helpParent = document.querySelector(".help-support-parent");
 
 helpBtn.addEventListener("click", () => {
     helpParent.style.display= "flex";
