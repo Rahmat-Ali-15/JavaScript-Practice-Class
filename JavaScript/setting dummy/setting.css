@@ -10,12 +10,13 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  background-color: #f9fbfc;
+  background-color: #F9FBFC;
 }
 
 /* <============ setting start =============> */
 
 .setting-container {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 20px 150px;
@@ -38,6 +39,9 @@ body {
 /* setting icon & heading end */
 
 .setting-content {
+  position: sticky;
+  top: 20px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -49,8 +53,8 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-.account-setting div,
-.notification div,
+.account-setting .account-parent,
+.notification .notifi-parent,
 .privacy,
 .appearance .appearance-parent,
 .help_support,
@@ -61,10 +65,19 @@ body {
   align-items: center;
   padding: 5px 10px;
   border-radius: 8px;
-  background-color: #29a3e0;
+  background-color: #29A3E0;
+  transition: background-color 0.4s ease;
 }
-.account-setting div h3,
-.notification div h3,
+.account-setting .account-parent:hover,
+.notification .notifi-parent:hover,
+.privacy:hover,
+.appearance .appearance-parent:hover,
+.help_support:hover,
+.about:hover {
+  background-color: #218FC4;
+}
+.account-setting .account-parent h3,
+.notification .notifi-parent h3,
 .privacy h3,
 .appearance .appearance-parent h3,
 .theme .theme-parent h3,
@@ -225,17 +238,21 @@ body {
 
 .account-setting-child {
   width: 100%;
-  margin-top: 45px;
+  padding: 20px 30px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* display: none; */
+  border-radius: 8px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 .account-child-head {
   color: black;
   font-size: 24px;
   font-weight: 500;
-  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D6DDE3;
 }
 .default-profile-details {
   display: flex;
@@ -272,8 +289,8 @@ body {
 .user-location input {
   padding: 8px;
   border-radius: 8px;
-  border: none;
-  background-color: rgb(60, 202, 205);
+  border: 1px solid #D6DDE3;
+  background-color: #dce3ea;
 }
 .full-name input:focus,
 .user-email input:focus,
@@ -295,7 +312,12 @@ body {
   height: 200px;
   margin-top: 10px;
   border-radius: 50%;
-  background-color: rgb(79, 117, 144);
+  background-color: white;
+}
+.profile-picture img{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 
 /* account setting child end */
@@ -304,10 +326,14 @@ body {
 
 .edit-profile-container {
   width: 100%;
-  margin-top: 45px;
+  padding: 20px 30px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: 8px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 
@@ -346,15 +372,17 @@ body {
 .edit-user-email input,
 .edit-user-bio textarea,
 .edit-user-location input {
-  padding: 8px;
+  padding: 12px;
   border-radius: 8px;
   border: none;
-  background-color: rgb(60, 202, 205);
+  outline: none;
+  background-color: #dce3ea;
 }
 .edit-full-name input:focus,
 .edit-user-email input:focus,
 .edit-user-bio textarea:focus,
 .edit-user-location input:focus {
+  border: 1px solid green;
   outline: none;
 }
 .edit-profile-picture-container {
@@ -369,7 +397,11 @@ body {
   height: 200px;
   margin-top: 10px;
   border-radius: 50%;
-  background-color: rgb(79, 117, 144);
+}
+.edit-profile-picture img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 /* eidt profile details end */
@@ -378,10 +410,14 @@ body {
 
 .change-pass-parent {
   width: 50%;
-  margin-top: 40px;
+  padding: 20px 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+  border-radius: 8px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .change-pass-head {
@@ -399,8 +435,7 @@ body {
   gap: 20px;
   border: none;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
 }
 .old-pass,
 .new-pass,
@@ -419,11 +454,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  background-color: rgb(79, 117, 144);
-  background-color: white;
+  background-color: #dce3ea;
 }
 .old-pass div:focus-within,
 .new-pass div:focus-within,
@@ -449,6 +484,7 @@ body {
 .change-pass-btn input {
   width: 90%;
   border: none;
+  background-color: transparent;
 }
 .old-pass input:focus,
 .new-pass input:focus,
@@ -477,11 +513,11 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #a2acb8;
+  background-color: #29A3E0;
   transition: all 0.6s ease;
 }
 .change-pass-btn button:hover {
-  background-color: #3eb5e8;
+  background-color: #218FC4;
 }
 
 /* Change password end */
@@ -494,6 +530,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .two-factor-login-container {
@@ -504,7 +543,7 @@ body {
   flex-direction: column;
   gap: 20px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   border: none;
   border-radius: 10px;
 }
@@ -516,8 +555,8 @@ body {
 }
 .login-heading p {
   text-align: center;
-  opacity: 0.5;
   font-size: 15px;
+  color: #6E7A88;
 }
 .two-factor-login-container .email,
 .two-factor-login-container .password {
@@ -546,9 +585,13 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  background-color: #3eb5e8;
   color: white;
   cursor: pointer;
+  background-color: #29A3E0;
+  transition: background-color 0.6s ease;
+}
+.login-btn button:hover{
+  background-color: #218FC4;
 }
 /* Two-Factor login end */
 
@@ -556,9 +599,11 @@ body {
 
 .two-factor-otp {
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .two-factor-otp-container {
@@ -570,16 +615,17 @@ body {
   gap: 20px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 .otp-heading h1 {
+  color: #2C2F3A;
   font-weight: 550;
   font-size: 24px;
   text-align: center;
   margin: 20px 0;
 }
 .otp-heading p {
-  opacity: 0.5;
+  color: #6E7A88;
   font-size: 15px;
   text-align: center;
 }
@@ -613,9 +659,13 @@ body {
   font-size: 16px;
   border: none;
   border-radius: 8px;
-  background-color: #3eb5e8;
   color: white;
   cursor: pointer;
+  background-color: #29A3E0;
+  transition: background-color 0.6s ease;
+}
+.otp-btn button:hover {
+  background-color: #218FC4;
 }
 .otp-btn p {
   text-align: center;
@@ -627,9 +677,11 @@ body {
 
 .two-factor-success-msg {
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .factor-success-msg-container {
@@ -639,7 +691,7 @@ body {
   text-align: center;
   border-radius: 10px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 
 .factor-success-msg-container h2 {
@@ -670,27 +722,31 @@ body {
 
 .privacy-parent-container{
   max-width: 100%;
-  padding: 20px 20px 20px 50px;
+  padding: 20px 50px;
   margin-top: 40px;
-  display: flex;
   flex-direction: column;
   gap: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .privacy-heading{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: #6E7A88;
 }
 .privacy-heading h1{
   font-weight: 500;
   font-size: 30px;
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
+  color: #2C2F3A;
+  border-bottom: 3px solid #D6DDE3;
 }
 .privacy-heading p>span{
   font-weight: 600;
+  color: #2C2F3A;
 }
 .privacy-details{
   max-width: 100%;
@@ -699,6 +755,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-left: 20px;
 }
 .data-info h2,
 .data-info p{
@@ -707,6 +764,7 @@ body {
 .privacy-details ol h2{
   font-size: 22px;
   font-weight: 500;
+  color: #2C2F3A;
 }
 .privacy-details ol>li::marker{
   font-size: 22px;
@@ -724,6 +782,7 @@ body {
 }
 .data-info ol>li>h4{
   font-weight: 550;
+  color: #2C2F3A;
 }
 .data-info ol>li>ul{
   margin-top: 10px;
@@ -731,6 +790,7 @@ body {
 }
 .data-info ol>li>ul>li{
   list-style: disc;
+  color: #6E7A88;
 }
 
 .use-info h2,
@@ -747,7 +807,15 @@ body {
 .change-privacy h2,
 .contact-us h2,
 .contact-us p{
+  color: #2C2F3A;
   margin-bottom: 15px;
+}
+.cookies-tracking p,
+.data-security p,
+.data-retention p,
+.child-privacy p,
+.change-privacy p{
+  color: #6E7A88;
 }
 .use-info ul,
 .sharing-info ul,
@@ -758,6 +826,7 @@ body {
 .sharing-info ul>li,
 .rights ul>li{
   list-style: disc;
+  color: #6E7A88;
 }
 
 /* Privacy policy end */
@@ -766,10 +835,12 @@ body {
 
 .help-support-parent{
   max-width: 100%;
-  padding: 30px;
+  padding: 30px 40px;
   flex-direction: column;
   gap: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #EEF3F7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   display: none;
 }
 .help-heading{
@@ -780,8 +851,9 @@ body {
 .help-heading h1{
   font-size: 30px;
   font-weight: 500;
+  color: #2C2F3A;
   padding-bottom: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid #D6DDE3;
 }
 .help-heading>h2{
   font-weight: 500;
@@ -792,7 +864,7 @@ body {
   font-weight: 600;
 }
 .help-details{
-  padding-left: 20px;
+  padding-left: 25px;
 }
 .help-details ol{
   display: flex;
