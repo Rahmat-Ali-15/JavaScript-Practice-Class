@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.slider-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slide {
+    width: 70%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.slide-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.slider-btn{
+    margin-top: 20px;
+}
+.slider-btn>button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: gray;
+    color: white;
+}
