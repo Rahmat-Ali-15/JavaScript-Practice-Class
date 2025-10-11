@@ -1,4 +1,4 @@
-// <--------------------------------------- Hosting in variavles ---------------------------------->
+// <--------------------------------------- Hoisting in variavles ---------------------------------->
 
 
 console.log(name);  // output: undefined (because it is globally defined)|
