@@ -7,6 +7,7 @@
     <title>Whether_App</title>
     <link rel="stylesheet" href="./style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="./script2.js" defer></script>
 
 </head>
 
@@ -26,9 +27,9 @@
 
         <!-- search bar -->
         <div class="search-container">
-            <input type="search" placeholder="Search for a city">
+            <input type="search" placeholder="Search for a city" id="search_input" >
             <div class="search-icon">
-                <i class="bi bi-search"></i>
+                <i class="bi bi-search" onclick="fetchData()"></i>
             </div>
         </div>
     </nav>
@@ -37,12 +38,12 @@
     <main>
         <!-- whether details -->
         <div class="whether-details">
-            <div name="location-time">
-                <div>
+            <div name="location-time" class="location-time" >
+                <!-- <div>
                     <i class="bi bi-geo-alt"></i>
                     <p>Mumbai</p>
                 </div>
-                <p>Time</p>
+                <p>Time</p> -->
             </div>
             <div class="whether-icon">
                 <i class="bi bi-cloud"></i>
