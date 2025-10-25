@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #fff;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    padding: 30px 400px;
+    background: linear-gradient(to right ,#9aa7ba,#91c5ff);
+}
+/* dark theme & fahrenheit */
+.dark-fahrenheit-div{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.fahrenheit,.bi-moon,.bi-brightness-high{
+    width: fit-content;
+    padding: 10px 12px;
+    color: white;
+    border-radius: 7px;
+    font-weight: 700;
+    background-color: #9cc6f8;
+}
+.bi-brightness-high{
+    display: none;
+}
+
+/* search bar */
+.search-container{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.search-container>input{
+    width: 93%;
+    padding: 12px 15px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.search-container>input:focus-within{
+    border: 2px solid gray;
+    caret-color: #fff;
+}
+.search-container>input::placeholder{
+    color: #fff;
+    opacity: 0.7;
+}
+.search-icon{
+    padding: 7px;
+    width: 7%;
+    background-color: #91c5ff;
+    text-align: center;
+    border-radius: 7px;
+}
+.bi-search{
+    font-size: 22px;
+    color: #fff;
+}
+.weather-details{
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.location-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.location-time>div{
+    display: flex;
+    gap: 15px;
+}
+.bi-geo-alt{
+    font-size: 20px;
+    color: #fff;
+}
+.location-time>div>p{
+    font-size: 24px;
+    color: #fdf4f4;
+    font-weight: 550;
+}
+.location-time>p{
+    color: #fdf4f4;
+}
+.weather-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bi-cloud{
+    font-size: 95px;
+    color: white;
+}
+.temp-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.temp-details>p{
+    font-size: 68px;
+}
+.temp-details>div{
+    display: flex;
+    gap: 30px;
+}
+.feels-like,
+.high-low{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.feels-like>p:nth-child(1),
+.high-low>p:nth-child(1){
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.feels-like>p:nth-child(2),
+.high-low>p:nth-child(2)>span{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.temp-details>div>span{
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
