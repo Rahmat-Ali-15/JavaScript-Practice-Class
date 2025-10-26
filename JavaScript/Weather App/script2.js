@@ -27,6 +27,45 @@ const fetchData = async() => {
             </div>
         </div>
     `
+
+      // weather stats
+
+    let weatherStats = document.querySelector(".weather-stats");
+    weatherStats.innerHTML = `
+        <div class="stat-card humidity">
+                <i class="bi bi-droplet"></i>
+                <div class="stat-info">
+                    <p class="stat-title">Humidity</p>
+                    <h2 class="stat-value">${data.main.humidity}%</h2>
+                </div>
+            </div>
+
+            <div class="stat-card wind-speed">
+                <i class="bi bi-wind"></i>
+                <div class="stat-info">
+                    <p class="stat-title">Wind Speed</p>
+                    <h2 class="stat-value">${data.wind.speed} km/h</h2>
+                </div>
+            </div>
+
+            <div class="stat-card uv-index">
+                <i class="bi bi-brightness-high"></i>
+                <div class="stat-info">
+                    <p class="stat-title">UV Index</p>
+                    <h2 class="stat-value">6</h2>
+                </div>
+            </div>
+
+            <div class="stat-card precipitation">
+                <i class="bi bi-speedometer"></i>
+                <div class="stat-info">
+                    <p class="stat-title">Pressure</p>
+                    <h2 class="stat-value">${((data.main.pressure)/1013.25).toFixed(2)} atm</h2>
+                </div>
+            </div>
+
+    `
+
     searchInput.value = "";
     
     } catch (error) {
@@ -53,6 +92,8 @@ const fetchData = async() => {
         <i class="bi bi-cloud"></i>
         <p>Cloud Type(Sunny or Partly Cloudy)</p>
     `
+
+  
 
 }
 
