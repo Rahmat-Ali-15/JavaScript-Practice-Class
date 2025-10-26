@@ -6,10 +6,13 @@
     color: #fff;
 }
 body{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding: 30px 400px;
-    background: linear-gradient(to right ,#9aa7ba,#91c5ff);
+    background: linear-gradient(to bottom ,#9aa7ba 10%,#91c5ff 90%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 /* dark theme & fahrenheit */
 .dark-fahrenheit-div{
@@ -18,7 +21,7 @@ body{
     justify-content: flex-end;
     align-items: center;
 }
-.fahrenheit,.bi-moon,.bi-brightness-high{
+.fahrenheit,.bi-moon,.toggle-theme>.bi-brightness-high{
     width: fit-content;
     padding: 10px 12px;
     color: white;
@@ -26,7 +29,7 @@ body{
     font-weight: 700;
     background-color: #9cc6f8;
 }
-.bi-brightness-high{
+.toggle-theme>.bi-brightness-high{
     display: none;
 }
 
@@ -67,6 +70,8 @@ body{
     font-size: 22px;
     color: #fff;
 }
+
+/* weather details */
 .weather-details{
     width: 100%;
     margin-top: 60px;
@@ -74,6 +79,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    margin-bottom: 40px;
 }
 .location-time{
     display: flex;
@@ -126,7 +132,6 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    border: 1px solid red;
 }
 .feels-like>p:nth-child(1),
 .high-low>p:nth-child(1){
@@ -140,4 +145,41 @@ body{
 }
 .temp-details>div>span{
     border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* weather stats */
+.weather-stats{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.stat-card{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: #99c7fb;
+}
+.stat-card>.bi-droplet,
+.stat-card>.bi-wind,
+.stat-card>.bi-brightness-high,
+.stat-card>.bi-speedometer{
+    font-size: 24px;
+}
+.stat-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.stat-title{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.stat-value{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
 }
