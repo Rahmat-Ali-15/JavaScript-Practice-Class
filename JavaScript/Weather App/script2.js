@@ -4,26 +4,27 @@ let api_key = "a7f44a715578d31824ab69aeafc9ed80";
 const fetchData = async() => {
     let searchInput = document.querySelector("#search_input");
     let searchInputVal = searchInput.value;
-    let api = `https://api.openweathermap.org/data/2.5/weather?q=${searchInputVal}&appid=${api_key}&units=metric`
+    // let api = `https://api.openweathermap.org/data/2.5/weather?q=${searchInputVal}&appid=${api_key}&units=metric`
+    let api = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInputVal}&units=metric&appid=${api_key}`;
 
     try {
         let res = await fetch(api);
-        let data = await res.json()
-        console.log("🚀 ~ data:", data);
+        let data = await res.json();
+        console.log("🚀 ~ data:", data.list);
 
         // temp details
         let tempDetails = document.querySelector(".temp-details");
         tempDetails.innerHTML = `
-        <p>${data.main.temp}&deg;C</p>
+        <p>${data.list[0].main.temp}&deg;C</p>
         <div>
             <div class="feels-like">
                 <p>Feels like</p>
-                <p>${data.main.feels_like}&deg;C</p>
+                <p>${data.list[0].main.feels_like}&deg;C</p>
             </div>
             <span></span>
             <div class="high-low">
                 <p>High / Low</p>
-                <p><span>${data.main.temp_max}&deg;</span> / <span>${data.main.temp_min}&deg;</span></p>
+                <p><span>${data.list[0].main.temp_max}&deg;</span> / <span>${data.list[0].main.temp_min}&deg;</span></p>
             </div>
         </div>
     `
