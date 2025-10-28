@@ -4,6 +4,12 @@ let api_key = "a7f44a715578d31824ab69aeafc9ed80";
 const fetchData = async () => {
   let searchInput = document.querySelector("#search_input");
   let searchInputVal = searchInput.value;
+
+  if(searchInputVal.trim()===""){
+    alert("Please enter city name");
+    return;
+  }
+//   let defaultCity = "Mumbai"
   searchInputVal =
     searchInputVal.charAt(0).toUpperCase() + searchInputVal.slice(1);
 
@@ -120,8 +126,31 @@ const fetchData = async () => {
 
 const hourlyForcast = (data) => {
   console.log("🚀 ~ data:", data);
+    let hourlyForcastCard = document.querySelector(".hourly-forecast-card");
+    hourlyForcastCard.innerHTML = "";
 
-  // data.forEach((el)=> {
+  data.list.slice(0,6).forEach((el)=> {
 
-  // })
+    let div = document.createElement("div");
+    div.classList.add("hour-card");
+
+    let hourlyTime = document.createElement("p");
+    hourlyTime.innerText = moment(el.dt_txt).format("h A");
+    // hourlyTime.innerText = el.dt_txt;
+
+    let cloudIcon = document.createElement("img");
+    cloudIcon.className = "cloudIcon"
+    cloudIcon.src = `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`;
+
+    let hourlyTemp = document.createElement("p");
+    hourlyTemp.innerHTML = `${el.main.temp}℃`
+
+    div.append(hourlyTime,cloudIcon,hourlyTemp )
+
+    hourlyForcastCard.append(div);
+  })
 };
+
+// window.onload = ()=> {
+//     fetchData()
+// }
