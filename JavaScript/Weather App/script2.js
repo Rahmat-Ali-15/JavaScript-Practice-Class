@@ -32,9 +32,21 @@ const fetchData = async () => {
 
     loading.style.display = "none";
 
-    hourlyForcast(data);
+    hourlyForecast(data);
+    displayDailyForecast(data)
 
-    console.log("🚀 ~ data:", data.list);
+    console.log("🚀 ~ data12:", data.list);
+
+    // weather location & time
+    let weatherLocationTime = document.querySelector(".location-time");
+
+    weatherLocationTime.innerHTML = `
+                <div>
+                    <i class="bi bi-geo-alt"></i>
+                    <p>${searchInputVal}, <span>${data.city.country}</span></p>
+                </div>
+                <p>${moment().format("MMMM Do YYYY, h:mm:ss a")}</p>
+    `;
 
     // weather details
 
@@ -47,7 +59,7 @@ const fetchData = async () => {
     // temp details
     let tempDetails = document.querySelector(".temp-details");
     tempDetails.innerHTML = `
-        <p>${data.list[0].main.temp}&deg;C</p>
+        <p>${Math.round(data.list[0].main.temp)}&deg;C</p>
         <div>
             <div class="feels-like">
                 <p>Feels like</p>
@@ -56,7 +68,7 @@ const fetchData = async () => {
             <span></span>
             <div class="high-low">
                 <p>High / Low</p>
-                <p><span>${data.list[0].main.temp_max}&deg;</span> / <span>${data.list[0].main.temp_min}&deg;</span></p>
+                <p><span>${Math.round(data.list[0].main.temp_max)}&deg;</span> / <span>${Math.round(data.list[0].main.temp_min)}&deg;</span></p>
             </div>
         </div>
     `;
@@ -89,7 +101,7 @@ const fetchData = async () => {
                 </div>
             </div>
 
-            <div class="stat-card precipitation">
+            <div class="stat-card pressure">
                 <i class="bi bi-speedometer"></i>
                 <div class="stat-info">
                     <p class="stat-title">Pressure</p>
@@ -111,23 +123,14 @@ const fetchData = async () => {
     }, 2000);
   }
 
-  let weatherLocationTime = document.querySelector(".location-time");
-
-  weatherLocationTime.innerHTML = `
-                <div>
-                    <i class="bi bi-geo-alt"></i>
-                    <p>${searchInputVal}</p>
-                </div>
-                <p>${moment().format("MMMM Do YYYY, h:mm:ss a")}</p>
-    `;
 };
 
-// weather details
+// hourly forceast
 
-const hourlyForcast = (data) => {
-  console.log("🚀 ~ data:", data);
-    let hourlyForcastCard = document.querySelector(".hourly-forecast-card");
-    hourlyForcastCard.innerHTML = "";
+const hourlyForecast = (data) => {
+  console.log("🚀 ~ data32:", data);
+    let hourlyForecastCard = document.querySelector(".hourly-forecast-card");
+    hourlyForecastCard.innerHTML = "";
 
   data.list.slice(0,6).forEach((el)=> {
 
@@ -143,14 +146,43 @@ const hourlyForcast = (data) => {
     cloudIcon.src = `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`;
 
     let hourlyTemp = document.createElement("p");
-    hourlyTemp.innerHTML = `${el.main.temp}℃`
+    hourlyTemp.innerHTML = `${Math.round(el.main.temp)}℃`
 
     div.append(hourlyTime,cloudIcon,hourlyTemp )
 
-    hourlyForcastCard.append(div);
+    hourlyForecastCard.append(div);
   })
 };
 
-// window.onload = ()=> {
-//     fetchData()
-// }
+// Daily(5-Days) forecast
+const displayDailyForecast = (data) => {
+  const dailyForecast = data.list.filter((item,i)=> i % 8 === 0).slice(0,5)
+  console.log("🚀 ~ dailyForecast:", dailyForecast);
+
+  let dailyForecastContent = document.querySelector(".daily-forecast-content");
+
+  dailyForecast.forEach((el)=> {
+    let forecastCard = document.createElement("div");
+    forecastCard.className = "forecast-card";
+    const date = new Date(el.dt * 1000);
+    const dayName = date.toLocaleDateString('en-IN', { weekday: 'long' });
+
+    forecastCard.innerHTML = `
+            <div>
+                <p>${dayName}</p>
+                <div class="cloud-detail">
+                    <img src="https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png" alt="weather icon">
+                    <p class="daily-cloud-type">${el.weather[0].description}</p>
+                </div>
+            </div>
+            <div class="daily-temp-detail">
+                <p name="min-temp">${Math.round(el.main.temp_min)}&deg;</p>
+                <p name="max-temp">${Math.round(el.main.temp_max)}&deg;</p>
+            </div>
+    `
+    dailyForecastContent.append(forecastCard)
+  })
+
+}
+
+
