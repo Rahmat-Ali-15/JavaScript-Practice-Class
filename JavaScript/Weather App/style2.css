@@ -27,7 +27,6 @@ body{
     color: white;
     border-radius: 7px;
     font-weight: 700;
-    /* background-color: #9cc6f8; */
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .toggle-theme>.bi-brightness-high{
@@ -50,10 +49,12 @@ body{
     outline: none;
     border-radius: 8px;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
 }
 .search-container>input:focus-within{
     border: 2px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     caret-color: #fff;
 }
 .search-container>input::placeholder{
@@ -125,10 +126,9 @@ body{
     transform-origin: center;
     border: none;
 }
-/* .bi-cloud{
-    font-size: 95px;
-    color: white;
-} */
+.cloud-type{
+    text-transform: capitalize;
+}
 .temp-details{
     display: flex;
     flex-direction: column;
@@ -278,7 +278,7 @@ body{
 }
 .forecast-card{
     width: 100%;
-    padding: 5px 10px;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     border: 1px solid transparent;
@@ -298,11 +298,11 @@ body{
     align-items: center;
     gap: 20px;
 }
-.forecast-card>div>p{
-    width: 20%;
+.forecast-card>div:nth-child(1)>p{
+    width: 30%;
 }
 .cloud-detail{
-    width: 80%;
+    width: 70%;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -317,4 +317,5 @@ body{
     width: 50%;
     display: flex;
     justify-content: end;
+    gap: 15px;
 }
