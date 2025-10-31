@@ -318,7 +318,3 @@ body{
     display: flex;
     justify-content: end;
 }
-.daily-temp-detail p{
-    margin: 0;
-    padding: 0;
-}
