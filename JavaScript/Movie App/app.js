@@ -2,22 +2,24 @@ const api_key = `3e431991`;
 let movieUrl = `https://omdbapi.com/?apikey=${api_key}`;
 
 async function movieApp(defaultSearch = "") {
-  let search = defaultSearch || document.getElementById("search").value; // defaultSearch parameter is used for showing Avengers movie while loading the webpage
+  let search = defaultSearch || document.getElementById("search").value; // defaultSearch parameter is used for showing random movies while loading the webpage
   let type = document.getElementById("select_type")?.value || "";
   let year = document.getElementById("year_input")?.value || "";
   // console.log(search);
   const main = document.getElementById("container");
 
   // Show loading message before fetch
-
-  main.innerHTML = `<p style="color:white; font-size:20px; width: 88vw; text-align:center;">Loading...</p>`;
+  let loading = document.querySelector(".loading");
+  loading.style.display = "block";
+  
 
   // Check if search is empty (only for user search, not default load)
-
   if (!defaultSearch && search === "") {
     alert("Please enter a movie name to search.");
+    loading.style.display = "none";
     return; // stop the function here
   }
+  main.innerHTML = "";
 
   let api = movieUrl + `&s=${search}&y=${year}&type=${type}`;
 
@@ -25,6 +27,10 @@ async function movieApp(defaultSearch = "") {
     let res = await fetch(api);
     let data = await res.json();
     console.log(data.Search);
+    if (!data.Search) {
+      main.innerHTML = `<p class="no-result">No movie found 😢</p>`;
+      return;
+    }
     foundMovie(data.Search);
 
     //  Clear the search input after showing results
@@ -35,6 +41,8 @@ async function movieApp(defaultSearch = "") {
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    loading.style.display = "none";
   }
 }
 
@@ -72,8 +80,16 @@ function foundMovie(value) {
   });
 }
 
+
+
 async function movieDescription(id) {
   let descriptionAPI = `https://omdbapi.com/?apikey=3e431991&i=${id}`;
+
+  let loading = document.querySelector(".loading");
+  loading.style.display = "block";
+  document.querySelector("header").classList.add("header-disable");
+  document.querySelector(".search_bar_container").classList.add("searchbar-disable");
+  document.querySelector("#container").classList.add("container-disable");
 
   try {
     let res = await fetch(descriptionAPI);
@@ -81,6 +97,9 @@ async function movieDescription(id) {
     movieDetails(description);
   } catch (error) {
     console.log(error);
+  }
+  finally{
+    loading.style.display = "none";
   }
 }
 
@@ -162,20 +181,131 @@ function movieDetails(val) {
 
   modalContainer.append(modalContent);
   let cancelBtn = document.querySelector(".cross-btn");
-  cancelBtn.addEventListener("click", () => {
-      modalContent.classList.add("close-modal")
-  })
+  if(cancelBtn){
+    cancelBtn.addEventListener("click", () => {
+      modalContent.classList.add("close-modal");
+      document.querySelector("header").classList.remove("header-disable");
+      document.querySelector(".search_bar_container").classList.remove("searchbar-disable");
+      document.querySelector("#container").classList.remove("container-disable")
+    });
+  }
 }
 
+let defaultSearchKeywords = [
+  "action",
+  "love",
+  "romance",
+  "thriller",
+  "magic",
+  "superhero",
+  "adventure",
+  "fight",
+  "crime",
+  "war",
+  "spy",
+  "family",
+  "fantasy",
+  "sci-fi",
+  "drama",
+  "mystery",
+  "space",
+  "hero",
+  "monster",
+  "comedy"
+];
 
-// Avengers word will show in the movie name input
-/*window.onload = function () {
-    document.getElementById("search").value = "Avengers";
-    movieApp();
-};*/
+let defaultHollywood = [
+  "hollywood",
+  "superhero",
+  "action",
+  "avengers",
+  "marvel",
+  "dc",
+  "space",
+  "fantasy",
+  "wizard",
+  "harry potter",
+  "jurassic",
+  "mission impossible",
+  "thriller",
+  "comedy",
+  "romance",
+  "adventure",
+  "pixar",
+  "disney",
+];
 
-// Avengers word will not show in the movie name input
+let defaultBollywood = [
+  "bollywood",
+  "salman khan",
+  "shahrukh khan",
+  "amir khan",
+  "hrithik",
+  "romance",
+  "love",
+  "action",
+  "tiger",
+  "pathaan",
+  "war",
+  "south action",
+  "rrr",
+  "kgf",
+  "bahubali",
+  "90s bollywood",
+  "classic indian",
+  "family drama",
+  "comedy hindi"
+];
+
+let defaultRomance = [
+  "romance",
+  "love",
+  "romantic movie",
+  "couple",
+  "date",
+  "heart",
+  "valentine",
+  "bollywood love",
+  "hollywood romance"
+];
+
+let defaultAction = [
+  "action",
+  "fight",
+  "superhero",
+  "marvel",
+  "batman",
+  "soldier",
+  "war",
+  "battle",
+  "mission",
+  "kung fu",
+  "ninja",
+  "spy"
+];
+
+let defaultFantasy = [
+  "magic",
+  "wizard",
+  "harry potter",
+  "fantasy",
+  "dragons",
+  "witch",
+  "supernatural",
+  "monsters",
+  "wednesday"
+];
+
+let defaultCategories = [
+  ...defaultSearchKeywords,
+  ...defaultHollywood,
+  ...defaultBollywood,
+  ...defaultRomance,
+  ...defaultAction,
+  ...defaultFantasy
+];
 
 window.onload = function () {
-  movieApp("Avengers"); // But don't show it in the input
+  let randomKeyword = defaultCategories[Math.floor(Math.random() * defaultCategories.length)];
+  movieApp(randomKeyword);
 };
