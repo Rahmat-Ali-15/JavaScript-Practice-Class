@@ -93,9 +93,9 @@
 // 8. Check if a number is a palindrome (same forward and backward) using a while loop.
 
 
-// let num = 1331;
-// let reverse = num.toString().split("").map(Number);
-// // console.log(reverse) 
+let num = 1331;
+let reverse = num.toString().split("").map(Number);
+console.log(reverse) 
 
 // let i = reverse.length - 1;
 // let ans = "";

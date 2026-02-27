@@ -48,5 +48,5 @@ const appendData = (value) => {
     container.append(id, login, image, user_view_type);
     main.append(container);
   });
-  Page_Data.append(pages);
+  // Page_Data.append(pages);
 };

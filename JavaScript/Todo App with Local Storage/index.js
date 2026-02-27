@@ -4,7 +4,7 @@ const myTodo = (event) => {
     let todoInput = document.querySelector(".input_box");
     let todoValue = todoInput.value;
 
-    if(todoValue === ""){
+    if(todoValue.trim() === ""){
         alert("Add some task");
         return;
     }

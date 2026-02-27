@@ -8,7 +8,7 @@ async function getData() {
     try {
         let res = await fetch(url);
         // Adjust limit if needed(making limit dynamically)
-         if (!totalPages) {
+        if (!totalPages) {
             const totalCount = res.headers.get("X-Total-Count");
             totalPages = Math.ceil(totalCount / 5);
         }

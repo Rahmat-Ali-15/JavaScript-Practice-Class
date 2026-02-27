@@ -18,12 +18,7 @@
 // console.log(car.brand);
 // car.start();
 
-
-
-
-
 // 2️⃣ Create a student object with properties: name, age, marks, and a method greet() that prints "Hello, my name is [name]".
-
 
 // let student = {
 //     name : "Rahmat",
@@ -35,9 +30,7 @@
 // }
 // student.greet();
 
-
 // 3️⃣ Write code to add a new property city: "Mumbai" to an existing object.
-
 
 // let student = {
 //     name : "Rahmat",
@@ -48,8 +41,6 @@
 // student.city= "Mumbai";
 
 // console.log(student);
-
-
 
 // 4️⃣ Write code to delete a property from an object.
 
@@ -66,15 +57,12 @@
 
 // console.log(student);
 
-
-
 // 5️⃣ Create an object called calculator that has two numbers and the following methods:
 
 // add(): returns the sum
 // subtract(): returns the difference
 // multiply(): returns the product
 // divide(): returns the quotient
-
 
 // let calculator = {
 //     num1: 10,
@@ -107,10 +95,7 @@
 // console.log(calculator.multiply());
 // console.log(calculator.devide());
 
-
-
 // Practice questions
-
 
 // 2.Given an object {name:"Alice", age:25, city:"New York"}, update the age property to 26 and add a new property country:"USA".
 
@@ -126,7 +111,6 @@
 
 // console.log(object)
 
-
 // 3. Create an object with at least 3 properties and use a loop ot print each key-value pair.
 
 // let object = {
@@ -138,8 +122,6 @@
 // for (let key in object) {
 //     console.log(`${key} = ${object[key]}`);
 // }
-
-
 
 // 4. Create an object represeting a student with properties like  name, age, and grade, where grades itself is an object with subjects as keys and scores as values.
 
@@ -164,9 +146,6 @@
 //     }
 // }
 
-
-
-
 // 5. Create an object with a greet method that prints a greeting mesage using the object's properties.
 
 // let object = {
@@ -176,8 +155,6 @@
 // }
 // let ans = object.greet("good")
 // console.log(ans);
-
-
 
 // 6. Given an object { name : "Rahmat", age: "20", job : "Developer"}, use destructuring to extract and print name and job.
 
@@ -190,7 +167,6 @@
 // let { name, job } = object;
 // console.log(name, job);
 
-
 // 7. Write a function that checks if a given property exists in an object and return true or false.
 
 // let object = {
@@ -202,7 +178,6 @@
 //     return property in obj;
 // }
 // console.log(hasproperty(object,"marks"));
-
 
 // Merge two objects {a:1,b:2} and {c:3,d:4} into a new object.
 
@@ -218,7 +193,15 @@
 // let MergeObj = { ...obj1, ...obj2 };
 // console.log(MergeObj);
 
+// 8.Demonstrate how to create a shallow  copy and a deep copy of an object.
 
-// 8.Demonstrate how to create a shallow  copy and a deep copy of an object. 
+// 9. Create an object person with name, age, and a method greet() that prints a greeting.
 
-
+const person = {
+  name: "Rahmat",
+  age: 21,
+  greet: function () {
+    console.log(this.name);
+  },
+};
+person.greet();
